@@ -1,0 +1,280 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "deployment": "Deployment",
+    "contact": "Kontakt",
+    "demo": "Demo anfordern"
+  },
+  "hero": {
+    "badge": "Open Source RMM",
+    "title": "Remote Monitoring & Management",
+    "titleHighlight": "in Ihrer Kontrolle",
+    "subtitle": "SlimRMM ist die leichtgewichtige, sichere und DSGVO-konforme Lösung für IT-Abteilungen und MSPs. Behalten Sie die volle Kontrolle über Ihre Daten - selbst gehostet oder durch uns verwaltet.",
+    "cta": "Kostenlos testen",
+    "ctaSecondary": "Live-Demo",
+    "trustedBy": "Vertraut von IT-Teams in",
+    "stats": {
+      "agents": "Verwaltete Endpoints",
+      "uptime": "Verfügbarkeit",
+      "response": "Reaktionszeit"
+    }
+  },
+  "features": {
+    "title": "Alles was Sie für modernes IT-Management brauchen",
+    "subtitle": "SlimRMM vereint alle wichtigen RMM-Funktionen in einer schlanken, performanten Lösung",
+    "list": {
+      "monitoring": {
+        "title": "Echtzeit-Monitoring",
+        "description": "CPU, RAM, Festplatte, Netzwerk - alle Metriken in Echtzeit. Automatische Alerts bei Schwellwertüberschreitungen."
+      },
+      "remote": {
+        "title": "Remote-Management",
+        "description": "Sichere Fernwartung per Remote Desktop und Terminal. Führen Sie Befehle aus, ohne physisch vor Ort zu sein."
+      },
+      "software": {
+        "title": "Software-Inventar",
+        "description": "Vollständige Übersicht aller installierten Software. Patch-Management und automatische Updates."
+      },
+      "security": {
+        "title": "Security & Compliance",
+        "description": "Schwachstellen-Scanning, Sicherheitsrichtlinien und automatisierte Compliance-Reports."
+      },
+      "automation": {
+        "title": "Automatisierung",
+        "description": "Skript-Bibliothek, geplante Aufgaben und automatisierte Workflows für wiederkehrende Prozesse."
+      },
+      "reporting": {
+        "title": "Reporting & Analytics",
+        "description": "Detaillierte Berichte und Dashboards. Export in CSV, PDF, Excel und JSON."
+      }
+    }
+  },
+  "deployment": {
+    "title": "Wählen Sie Ihr Deployment-Modell",
+    "subtitle": "Maximale Flexibilität: Hosten Sie SlimRMM selbst für volle Datenkontrolle oder nutzen Sie unseren Managed Service",
+    "selfHosted": {
+      "title": "Self-Hosted",
+      "badge": "Empfohlen",
+      "description": "Volle Kontrolle über Ihre Daten und Infrastruktur",
+      "benefits": {
+        "sovereignty": {
+          "title": "Datensouveränität",
+          "description": "Ihre Daten verlassen niemals Ihr Netzwerk"
+        },
+        "tisax": {
+          "title": "TISAX & ISO 27001",
+          "description": "Erfüllen Sie höchste Compliance-Anforderungen"
+        },
+        "gdpr": {
+          "title": "DSGVO-konform",
+          "description": "Keine Datenübertragung an Dritte"
+        },
+        "airgap": {
+          "title": "Air-Gap fähig",
+          "description": "Betrieb in isolierten Netzwerken möglich"
+        },
+        "custom": {
+          "title": "Anpassbar",
+          "description": "Integration in bestehende Infrastruktur"
+        },
+        "cost": {
+          "title": "Kosteneffizient",
+          "description": "Keine laufenden Hosting-Gebühren"
+        }
+      }
+    },
+    "managed": {
+      "title": "Managed Hosting",
+      "badge": "Komfortabel",
+      "description": "Wir kümmern uns um Betrieb, Updates und Backups",
+      "benefits": {
+        "noOps": {
+          "title": "Kein Betriebsaufwand",
+          "description": "Server-Management durch uns"
+        },
+        "updates": {
+          "title": "Auto-Updates",
+          "description": "Immer die neueste Version"
+        },
+        "backup": {
+          "title": "Tägliche Backups",
+          "description": "Automatische Datensicherung"
+        },
+        "support": {
+          "title": "Premium Support",
+          "description": "Direkter Zugang zu unseren Experten"
+        },
+        "sla": {
+          "title": "99.9% SLA",
+          "description": "Garantierte Verfügbarkeit"
+        },
+        "fast": {
+          "title": "Schneller Start",
+          "description": "In Minuten einsatzbereit"
+        }
+      }
+    },
+    "comparison": {
+      "title": "Vergleich",
+      "feature": "Merkmal",
+      "selfHosted": "Self-Hosted",
+      "managed": "Managed",
+      "dataSovereignty": "Volle Datensouveränität",
+      "tisaxReady": "TISAX-Ready",
+      "noDataTransfer": "Keine externe Datenübertragung",
+      "airGap": "Air-Gap Betrieb",
+      "serverManagement": "Server-Management inkl.",
+      "autoUpdates": "Automatische Updates",
+      "backups": "Managed Backups",
+      "premiumSupport": "Premium Support",
+      "yes": "Ja",
+      "no": "Nein",
+      "optional": "Optional",
+      "byYou": "Durch Sie",
+      "byUs": "Durch uns"
+    }
+  },
+  "pricing": {
+    "title": "Transparente Preise",
+    "subtitle": "Faire Staffelpreise ohne versteckte Kosten. Zahlen Sie nur für das, was Sie brauchen.",
+    "perMonth": "/ Monat",
+    "perAgent": "pro Agent",
+    "agents": "Agents",
+    "package": "50er-Paket",
+    "selfHosted": "Self-Hosted",
+    "managed": "Managed",
+    "hostingFee": "Hosting-Gebühr",
+    "total": "Gesamt",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "agents": "Bis 249 Agents",
+        "price": "75",
+        "perPackage": "pro 50 Agents"
+      },
+      "business": {
+        "name": "Business",
+        "agents": "250 - 499 Agents",
+        "price": "65",
+        "perPackage": "pro 50 Agents",
+        "savings": "13% Ersparnis"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "agents": "Ab 500 Agents",
+        "price": "55",
+        "perPackage": "pro 50 Agents",
+        "savings": "27% Ersparnis"
+      }
+    },
+    "hosting": {
+      "title": "Managed Hosting Gebühren",
+      "description": "Zusätzlich zum Paketpreis bei Managed Hosting",
+      "tier1": "Bis 500 Agents",
+      "tier2": "500 - 1.000 Agents",
+      "tier3": "1.000 - 5.000 Agents",
+      "custom": "Individuell"
+    },
+    "calculator": {
+      "title": "Preisrechner",
+      "agents": "Anzahl Agents",
+      "model": "Deployment-Modell",
+      "selfHosted": "Self-Hosted",
+      "managed": "Managed Hosting",
+      "monthly": "Monatliche Kosten",
+      "yearly": "Jährliche Kosten",
+      "perAgent": "Pro Agent"
+    },
+    "cta": "Jetzt starten",
+    "features": {
+      "title": "In allen Paketen enthalten",
+      "list": [
+        "Unbegrenzte Benutzer",
+        "Alle Funktionen inklusive",
+        "E-Mail Support",
+        "Regelmäßige Updates",
+        "API-Zugang",
+        "Multi-Plattform Agents"
+      ]
+    }
+  },
+  "security": {
+    "title": "Enterprise-Grade Sicherheit",
+    "subtitle": "SlimRMM wurde von Grund auf mit Sicherheit im Fokus entwickelt",
+    "features": {
+      "mtls": {
+        "title": "mTLS Verschlüsselung",
+        "description": "Gegenseitige TLS-Authentifizierung zwischen Server und Agents"
+      },
+      "zeroTrust": {
+        "title": "Zero Trust Architektur",
+        "description": "Jede Anfrage wird authentifiziert und autorisiert"
+      },
+      "audit": {
+        "title": "Audit Logging",
+        "description": "Lückenlose Protokollierung aller Aktionen"
+      },
+      "rbac": {
+        "title": "Rollen & Berechtigungen",
+        "description": "Feingranulare Zugriffskontrolle"
+      }
+    }
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "questions": {
+      "platforms": {
+        "q": "Welche Plattformen werden unterstützt?",
+        "a": "SlimRMM Agents sind verfügbar für Windows (x64), macOS (Apple Silicon) und Linux (Debian/Ubuntu, RHEL/CentOS). Der Server läuft auf jedem Linux-System mit Docker."
+      },
+      "migration": {
+        "q": "Kann ich von einem anderen RMM wechseln?",
+        "a": "Ja, SlimRMM kann parallel zu bestehenden Lösungen betrieben werden. Unsere Agents sind leichtgewichtig und beeinträchtigen andere Software nicht."
+      },
+      "trial": {
+        "q": "Gibt es eine kostenlose Testversion?",
+        "a": "Ja, Sie können SlimRMM 30 Tage kostenlos mit bis zu 10 Agents testen. Keine Kreditkarte erforderlich."
+      },
+      "support": {
+        "q": "Welchen Support erhalte ich?",
+        "a": "Alle Kunden erhalten E-Mail Support. Managed Hosting Kunden haben zusätzlich Zugang zu Premium Support mit schnelleren Reaktionszeiten."
+      },
+      "updates": {
+        "q": "Wie werden Updates durchgeführt?",
+        "a": "Bei Managed Hosting erfolgen Updates automatisch. Self-Hosted Kunden erhalten Update-Benachrichtigungen und können per Docker-Pull aktualisieren."
+      },
+      "scaling": {
+        "q": "Wie skaliert die Lösung?",
+        "a": "SlimRMM wurde für Performance entwickelt. Ein einzelner Server kann tausende Agents verwalten. Bei größeren Deployments beraten wir Sie gerne."
+      }
+    }
+  },
+  "cta": {
+    "title": "Bereit für modernes IT-Management?",
+    "subtitle": "Starten Sie heute mit SlimRMM und erleben Sie den Unterschied",
+    "demo": "Demo anfordern",
+    "trial": "Kostenlos testen",
+    "contact": "Kontakt aufnehmen"
+  },
+  "footer": {
+    "description": "SlimRMM ist die moderne, sichere und datenschutzkonforme Lösung für Remote Monitoring & Management.",
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "links": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "docs": "Dokumentation",
+      "api": "API Reference",
+      "about": "Über uns",
+      "blog": "Blog",
+      "careers": "Karriere",
+      "contact": "Kontakt",
+      "privacy": "Datenschutz",
+      "terms": "AGB",
+      "imprint": "Impressum"
+    },
+    "copyright": "Kiefer Networks. Alle Rechte vorbehalten."
+  }
+}
