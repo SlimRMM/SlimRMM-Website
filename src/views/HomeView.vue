@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { setLocale, type SupportedLocale } from '../i18n'
+import { supportedLocales, setLocale, type SupportedLocale } from '../i18n'
 import {
   Monitor,
   Shield,
@@ -19,6 +19,10 @@ import {
   X,
   ArrowRight,
   Users,
+  Database,
+  Box,
+  Settings,
+  Layers,
 } from 'lucide-vue-next'
 
 const { t, tm, locale } = useI18n()
@@ -26,10 +30,11 @@ const { t, tm, locale } = useI18n()
 // Mobile menu
 const mobileMenuOpen = ref(false)
 
-// Language toggle
-const toggleLanguage = () => {
-  const newLocale: SupportedLocale = locale.value === 'de' ? 'en' : 'de'
+// Language dropdown
+const languageDropdownOpen = ref(false)
+const changeLanguage = (newLocale: SupportedLocale) => {
   setLocale(newLocale)
+  languageDropdownOpen.value = false
 }
 
 // FAQ state
@@ -41,6 +46,7 @@ const toggleFaq = (key: string) => {
 // Pricing calculator
 const agentCount = ref(100)
 const deploymentModel = ref<'selfHosted' | 'managed'>('selfHosted')
+const billingCycle = ref<'yearly' | 'monthly'>('yearly')
 
 const pricingCalculation = computed(() => {
   const agents = agentCount.value
@@ -60,26 +66,39 @@ const pricingCalculation = computed(() => {
   let hostingFee = 0
   if (deploymentModel.value === 'managed') {
     if (agents <= 500) {
-      hostingFee = 150
+      hostingFee = 250
     } else if (agents <= 1000) {
-      hostingFee = 350
+      hostingFee = 450
     } else {
-      hostingFee = 500
+      hostingFee = 650
     }
   }
 
-  const monthly = basePrice + hostingFee
-  const yearly = monthly * 12
+  const subtotal = basePrice + hostingFee
+
+  // Apply billing cycle adjustment (yearly = 7% discount, monthly = no change)
+  let billingMultiplier = 1
+  let billingAdjustment = 0
+  if (billingCycle.value === 'yearly') {
+    billingMultiplier = 0.93 // 7% discount
+    billingAdjustment = Math.round(subtotal * -0.07 * 100) / 100
+  }
+
+  const monthly = Math.round(subtotal * billingMultiplier * 100) / 100
+  const yearly = Math.round(monthly * 12 * 100) / 100
   const perAgent = monthly / agents
+  const savings = billingCycle.value === 'yearly' ? Math.round(subtotal * 0.07 * 12 * 100) / 100 : 0
 
   return {
     basePrice,
     hostingFee,
+    billingAdjustment,
     monthly,
     yearly,
     perAgent: perAgent.toFixed(2),
     packages,
     pricePerPackage,
+    savings,
   }
 })
 
@@ -100,6 +119,16 @@ const featureIcons = {
   security: Shield,
   automation: Zap,
   reporting: FileText,
+  proxmox: Layers,
+  services: Settings,
+}
+
+// Integration icons mapping
+const integrationIcons = {
+  osquery: Database,
+  proxmox: Layers,
+  docker: Box,
+  webrtc: Monitor,
 }
 
 // Security icons mapping
@@ -111,7 +140,7 @@ const securityIcons = {
 }
 
 // FAQ keys
-const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scaling']
+const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scaling', 'proxmox']
 </script>
 
 <template>
@@ -133,6 +162,9 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
             <button @click="scrollTo('features')" class="text-gray-600 hover:text-primary-600 transition-colors">
               {{ t('nav.features') }}
             </button>
+            <button @click="scrollTo('integrations')" class="text-gray-600 hover:text-primary-600 transition-colors">
+              {{ t('nav.integrations') }}
+            </button>
             <button @click="scrollTo('deployment')" class="text-gray-600 hover:text-primary-600 transition-colors">
               {{ t('nav.deployment') }}
             </button>
@@ -146,14 +178,31 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
 
           <!-- Right side -->
           <div class="flex items-center space-x-4">
-            <!-- Language toggle -->
-            <button
-              @click="toggleLanguage"
-              class="flex items-center space-x-1 text-gray-600 hover:text-primary-600 transition-colors"
-            >
-              <Globe class="w-5 h-5" />
-              <span class="text-sm font-medium uppercase">{{ locale }}</span>
-            </button>
+            <!-- Language dropdown -->
+            <div class="relative">
+              <button
+                @click="languageDropdownOpen = !languageDropdownOpen"
+                class="flex items-center space-x-1 text-gray-600 hover:text-primary-600 transition-colors"
+              >
+                <Globe class="w-5 h-5" />
+                <span class="text-sm font-medium uppercase">{{ locale }}</span>
+                <ChevronDown class="w-4 h-4" :class="{ 'rotate-180': languageDropdownOpen }" />
+              </button>
+              <div
+                v-if="languageDropdownOpen"
+                class="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50"
+              >
+                <button
+                  v-for="lang in supportedLocales"
+                  :key="lang.code"
+                  @click="changeLanguage(lang.code)"
+                  class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  :class="{ 'bg-primary-50 text-primary-600': locale === lang.code }"
+                >
+                  {{ lang.name }}
+                </button>
+              </div>
+            </div>
 
             <!-- CTA Button -->
             <button class="hidden sm:inline-flex btn-primary text-sm py-2 px-4">
@@ -174,6 +223,9 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
         <div class="px-4 py-4 space-y-3">
           <button @click="scrollTo('features')" class="block w-full text-left py-2 text-gray-600">
             {{ t('nav.features') }}
+          </button>
+          <button @click="scrollTo('integrations')" class="block w-full text-left py-2 text-gray-600">
+            {{ t('nav.integrations') }}
           </button>
           <button @click="scrollTo('deployment')" class="block w-full text-left py-2 text-gray-600">
             {{ t('nav.deployment') }}
@@ -322,8 +374,36 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
       </div>
     </section>
 
+    <!-- Integrations Section -->
+    <section id="integrations" class="py-20 sm:py-28 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="section-title">{{ t('integrations.title') }}</h2>
+          <p class="section-subtitle">{{ t('integrations.subtitle') }}</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            v-for="(icon, key) in integrationIcons"
+            :key="key"
+            class="card-hover p-8 text-center"
+          >
+            <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <component :is="icon" class="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              {{ t(`integrations.list.${key}.title`) }}
+            </h3>
+            <p class="text-gray-600 text-sm">
+              {{ t(`integrations.list.${key}.description`) }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Deployment Section -->
-    <section id="deployment" class="py-20 sm:py-28 bg-gray-50">
+    <section id="deployment" class="py-20 sm:py-28 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="section-title">{{ t('deployment.title') }}</h2>
@@ -509,17 +589,24 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
           <div class="grid sm:grid-cols-3 gap-6">
             <div class="flex items-center justify-between p-4 bg-white rounded-lg">
               <span class="text-gray-700">{{ t('pricing.hosting.tier1') }}</span>
-              <span class="font-semibold text-gray-900">+150€{{ t('pricing.perMonth') }}</span>
+              <span class="font-semibold text-gray-900">+{{ t('pricing.hosting.tier1Price') }}€{{ t('pricing.perMonth') }}</span>
             </div>
             <div class="flex items-center justify-between p-4 bg-white rounded-lg">
               <span class="text-gray-700">{{ t('pricing.hosting.tier2') }}</span>
-              <span class="font-semibold text-gray-900">+350€{{ t('pricing.perMonth') }}</span>
+              <span class="font-semibold text-gray-900">+{{ t('pricing.hosting.tier2Price') }}€{{ t('pricing.perMonth') }}</span>
             </div>
             <div class="flex items-center justify-between p-4 bg-white rounded-lg">
               <span class="text-gray-700">{{ t('pricing.hosting.tier3') }}</span>
-              <span class="font-semibold text-gray-900">+500€{{ t('pricing.perMonth') }}</span>
+              <span class="font-semibold text-gray-900">+{{ t('pricing.hosting.tier3Price') }}€{{ t('pricing.perMonth') }}</span>
             </div>
           </div>
+          <!-- Billing Cycle Info -->
+          <div class="mt-6 flex flex-wrap gap-4 justify-center">
+            <div class="flex items-center space-x-2 bg-green-100 text-green-800 px-4 py-2 rounded-full">
+              <span class="text-sm font-medium">{{ t('pricing.billing.yearly') }}: {{ t('pricing.billing.yearlyNote') }}</span>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 text-center mt-4">{{ t('pricing.vatNote') }}</p>
         </div>
 
         <!-- Price Calculator -->
@@ -578,6 +665,49 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
                   </button>
                 </div>
               </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">{{ t('pricing.calculator.billing') }}</label>
+                <div class="grid grid-cols-2 gap-4">
+                  <button
+                    @click="billingCycle = 'yearly'"
+                    :class="[
+                      'p-4 rounded-lg border-2 text-left transition-all relative',
+                      billingCycle === 'yearly'
+                        ? 'border-green-500 bg-green-50'
+                        : 'border-gray-200 hover:border-gray-300'
+                    ]"
+                  >
+                    <div class="absolute -top-2 -right-2">
+                      <span class="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">
+                        {{ t('pricing.billing.yearlyBadge') }}
+                      </span>
+                    </div>
+                    <div class="font-medium" :class="billingCycle === 'yearly' ? 'text-green-900' : 'text-gray-700'">
+                      {{ t('pricing.billing.yearly') }}
+                    </div>
+                    <div class="text-sm" :class="billingCycle === 'yearly' ? 'text-green-600' : 'text-gray-500'">
+                      {{ t('pricing.billing.yearlyNote') }}
+                    </div>
+                  </button>
+                  <button
+                    @click="billingCycle = 'monthly'"
+                    :class="[
+                      'p-4 rounded-lg border-2 text-left transition-all',
+                      billingCycle === 'monthly'
+                        ? 'border-primary-500 bg-primary-50'
+                        : 'border-gray-200 hover:border-gray-300'
+                    ]"
+                  >
+                    <div class="font-medium" :class="billingCycle === 'monthly' ? 'text-primary-900' : 'text-gray-700'">
+                      {{ t('pricing.billing.monthly') }}
+                    </div>
+                    <div class="text-sm" :class="billingCycle === 'monthly' ? 'text-primary-600' : 'text-gray-500'">
+                      {{ t('pricing.billing.monthlyNote') }}
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
 
             <!-- Result -->
@@ -591,9 +721,15 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
                   <span class="text-gray-600">{{ t('pricing.hostingFee') }}</span>
                   <span class="font-medium">+{{ pricingCalculation.hostingFee }}€</span>
                 </div>
+                <div v-if="billingCycle === 'yearly'" class="flex justify-between items-center pb-4 border-b border-gray-100">
+                  <span class="text-gray-600">{{ t('pricing.calculator.billingAdjustment') }}</span>
+                  <span class="text-green-600 font-medium">
+                    {{ pricingCalculation.billingAdjustment.toFixed(2) }}€
+                  </span>
+                </div>
                 <div class="flex justify-between items-center pt-2">
                   <span class="text-lg font-semibold text-gray-900">{{ t('pricing.calculator.monthly') }}</span>
-                  <span class="text-3xl font-bold text-primary-600">{{ pricingCalculation.monthly }}€</span>
+                  <span class="text-3xl font-bold text-primary-600">{{ pricingCalculation.monthly.toFixed(2) }}€</span>
                 </div>
                 <div class="flex justify-between items-center text-gray-500">
                   <span>{{ t('pricing.calculator.yearly') }}</span>
@@ -603,10 +739,17 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
                   <span>{{ t('pricing.calculator.perAgent') }}</span>
                   <span>{{ pricingCalculation.perAgent }}€</span>
                 </div>
+                <div v-if="pricingCalculation.savings > 0" class="flex justify-between items-center text-green-600 font-medium pt-2 border-t border-gray-100">
+                  <span>{{ t('pricing.calculator.savings') }}</span>
+                  <span>{{ pricingCalculation.savings.toLocaleString() }}€ / {{ t('pricing.billing.yearly').toLowerCase() }}</span>
+                </div>
               </div>
               <button class="btn-primary w-full mt-8">
                 {{ t('pricing.cta') }}
               </button>
+              <p class="text-xs text-gray-500 text-center mt-4">
+                {{ t('pricing.vatNote') }}
+              </p>
             </div>
           </div>
         </div>

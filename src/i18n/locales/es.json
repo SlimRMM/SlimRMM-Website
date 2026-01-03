@@ -1,0 +1,336 @@
+{
+  "nav": {
+    "features": "Funciones",
+    "pricing": "Precios",
+    "deployment": "Despliegue",
+    "integrations": "Integraciones",
+    "contact": "Contacto",
+    "demo": "Solicitar Demo"
+  },
+  "hero": {
+    "badge": "RMM Open Source",
+    "title": "Remote Monitoring & Management",
+    "titleHighlight": "Bajo Su Control",
+    "subtitle": "SlimRMM es la solución ligera, segura y compatible con GDPR para departamentos de TI y MSPs. Mantenga el control total de sus datos - autoalojado o gestionado por nosotros.",
+    "cta": "Prueba Gratuita",
+    "ctaSecondary": "Demo en Vivo",
+    "trustedBy": "Confiado por equipos de TI en",
+    "stats": {
+      "agents": "Endpoints Gestionados",
+      "uptime": "Disponibilidad",
+      "response": "Tiempo de Respuesta"
+    }
+  },
+  "features": {
+    "title": "Todo lo que Necesita para la Gestión de TI Moderna",
+    "subtitle": "SlimRMM combina todas las funciones esenciales de RMM en una solución ligera y de alto rendimiento",
+    "list": {
+      "monitoring": {
+        "title": "Monitoreo en Tiempo Real",
+        "description": "CPU, RAM, disco, red - todas las métricas en tiempo real. Alertas automáticas cuando se superan los umbrales."
+      },
+      "remote": {
+        "title": "Acceso Remoto",
+        "description": "Terminal web, escritorio remoto y gestor de archivos. Administre sistemas directamente en su navegador."
+      },
+      "software": {
+        "title": "Software y Parches",
+        "description": "Inventario completo de software, actualizaciones automáticas y gestión de parches para todas las plataformas."
+      },
+      "security": {
+        "title": "Seguridad y Cumplimiento",
+        "description": "Escaneo de vulnerabilidades, políticas de seguridad e informes de cumplimiento GDPR automatizados."
+      },
+      "automation": {
+        "title": "Automatización",
+        "description": "Scripts de PowerShell, Bash y Python. Tareas programadas y flujos de trabajo automatizados."
+      },
+      "reporting": {
+        "title": "Informes y Análisis",
+        "description": "Informes detallados y dashboards. Exportación a CSV, PDF, Excel y JSON."
+      },
+      "proxmox": {
+        "title": "Integración Proxmox VE",
+        "description": "Gestione VMs y contenedores directamente desde SlimRMM. Iniciar, detener, reiniciar y monitorear estado."
+      },
+      "services": {
+        "title": "Gestión de Servicios",
+        "description": "Ver, iniciar, detener y reiniciar servicios del sistema. Compatible con systemd, launchd y Windows Services."
+      }
+    }
+  },
+  "integrations": {
+    "title": "Integraciones Potentes",
+    "subtitle": "SlimRMM se integra perfectamente con herramientas open-source probadas",
+    "list": {
+      "osquery": {
+        "title": "osquery",
+        "description": "Consultas de sistema basadas en SQL para obtener información detallada de sus endpoints. Hardware, software, usuarios, procesos y más."
+      },
+      "proxmox": {
+        "title": "Proxmox VE",
+        "description": "Integración nativa para virtualización Proxmox. Gestione VMs y contenedores, monitoree recursos."
+      },
+      "docker": {
+        "title": "Docker",
+        "description": "Vista general y gestión de contenedores. Administre imágenes, contenedores y volúmenes directamente."
+      },
+      "webrtc": {
+        "title": "Escritorio Remoto WebRTC",
+        "description": "Escritorio remoto basado en navegador sin software adicional. Conexión segura peer-to-peer."
+      }
+    }
+  },
+  "deployment": {
+    "title": "Elija Su Modelo de Despliegue",
+    "subtitle": "Máxima flexibilidad: Aloje SlimRMM usted mismo para control total de datos o use nuestro servicio gestionado",
+    "selfHosted": {
+      "title": "Autoalojado",
+      "badge": "Recomendado",
+      "description": "Control total sobre sus datos e infraestructura",
+      "benefits": {
+        "sovereignty": {
+          "title": "Soberanía de Datos",
+          "description": "Sus datos nunca salen de su red"
+        },
+        "tisax": {
+          "title": "TISAX e ISO 27001",
+          "description": "Cumpla con los más altos requisitos de cumplimiento"
+        },
+        "gdpr": {
+          "title": "Compatible con GDPR",
+          "description": "Sin transferencia de datos a terceros"
+        },
+        "airgap": {
+          "title": "Capaz de Air-Gap",
+          "description": "Operación en redes aisladas posible"
+        },
+        "custom": {
+          "title": "Personalizable",
+          "description": "Integración en infraestructura existente"
+        },
+        "cost": {
+          "title": "Económico",
+          "description": "Sin tarifas de alojamiento continuas"
+        }
+      }
+    },
+    "managed": {
+      "title": "Alojamiento Gestionado",
+      "badge": "Conveniente",
+      "description": "Nos encargamos de la operación, actualizaciones y copias de seguridad",
+      "benefits": {
+        "noOps": {
+          "title": "Sin Gastos de Operación",
+          "description": "Gestión de servidores por nosotros"
+        },
+        "updates": {
+          "title": "Auto-Actualizaciones",
+          "description": "Siempre la última versión"
+        },
+        "backup": {
+          "title": "Copias de Seguridad Diarias",
+          "description": "Protección automática de datos"
+        },
+        "support": {
+          "title": "Soporte Premium",
+          "description": "Acceso directo a nuestros expertos"
+        },
+        "sla": {
+          "title": "99.9% SLA",
+          "description": "Disponibilidad garantizada"
+        },
+        "fast": {
+          "title": "Inicio Rápido",
+          "description": "Listo en minutos"
+        }
+      }
+    },
+    "comparison": {
+      "title": "Comparación",
+      "feature": "Característica",
+      "selfHosted": "Autoalojado",
+      "managed": "Gestionado",
+      "dataSovereignty": "Soberanía de Datos Completa",
+      "tisaxReady": "Listo para TISAX",
+      "noDataTransfer": "Sin Transferencia de Datos Externa",
+      "airGap": "Operación Air-Gap",
+      "serverManagement": "Gestión de Servidor incl.",
+      "autoUpdates": "Actualizaciones Automáticas",
+      "backups": "Copias de Seguridad Gestionadas",
+      "premiumSupport": "Soporte Premium",
+      "yes": "Sí",
+      "no": "No",
+      "optional": "Opcional",
+      "byYou": "Por Usted",
+      "byUs": "Por Nosotros"
+    }
+  },
+  "pricing": {
+    "title": "Precios Transparentes",
+    "subtitle": "Precios escalonados justos sin costos ocultos. Pague solo por lo que necesita.",
+    "perMonth": "/ mes",
+    "perAgent": "por agente",
+    "agents": "Agentes",
+    "package": "Paquete de 50 agentes",
+    "selfHosted": "Autoalojado",
+    "managed": "Gestionado",
+    "hostingFee": "Tarifa de Alojamiento",
+    "total": "Total",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "agents": "Hasta 249 Agentes",
+        "price": "75",
+        "perPackage": "por 50 agentes"
+      },
+      "business": {
+        "name": "Business",
+        "agents": "250 - 499 Agentes",
+        "price": "65",
+        "perPackage": "por 50 agentes",
+        "savings": "13% de ahorro"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "agents": "500+ Agentes",
+        "price": "55",
+        "perPackage": "por 50 agentes",
+        "savings": "27% de ahorro"
+      }
+    },
+    "hosting": {
+      "title": "Tarifas de Alojamiento Gestionado",
+      "description": "Adicional al precio del paquete para alojamiento gestionado (precio base)",
+      "tier1": "Hasta 500 Agentes",
+      "tier1Price": "250",
+      "tier2": "500 - 1.000 Agentes",
+      "tier2Price": "450",
+      "tier3": "1.000 - 5.000 Agentes",
+      "tier3Price": "650",
+      "custom": "Personalizado"
+    },
+    "billing": {
+      "title": "Período de Facturación",
+      "monthly": "Mensual",
+      "yearly": "Anual",
+      "monthlyNote": "Cancelación flexible",
+      "yearlyNote": "7% de descuento",
+      "yearlyBadge": "Popular"
+    },
+    "vatNote": "Todos los precios excluyen 19% IVA.",
+    "calculator": {
+      "title": "Calculadora de Precios",
+      "agents": "Número de Agentes",
+      "model": "Modelo de Despliegue",
+      "billing": "Período de Facturación",
+      "selfHosted": "Autoalojado",
+      "managed": "Alojamiento Gestionado",
+      "monthly": "Costo Mensual",
+      "yearly": "Costo Anual",
+      "perAgent": "Por Agente",
+      "savings": "Usted ahorra",
+      "basePrice": "Precio Base",
+      "billingAdjustment": "Ajuste de Facturación"
+    },
+    "cta": "Comenzar",
+    "features": {
+      "title": "Incluido en todos los paquetes",
+      "list": [
+        "Usuarios ilimitados",
+        "Todas las funciones incluidas",
+        "Terminal y Escritorio Remoto",
+        "Gestor de Archivos",
+        "Integración Proxmox",
+        "Integración osquery",
+        "Gestión de Servicios",
+        "Soporte por email",
+        "Acceso API",
+        "Agentes multiplataforma"
+      ]
+    }
+  },
+  "security": {
+    "title": "Seguridad de Nivel Empresarial",
+    "subtitle": "SlimRMM fue construido desde cero con la seguridad como enfoque",
+    "features": {
+      "mtls": {
+        "title": "TLS 1.3 y mTLS",
+        "description": "Encriptación de última generación con autenticación mutua de certificados"
+      },
+      "zeroTrust": {
+        "title": "Arquitectura Zero Trust",
+        "description": "Cada solicitud es autenticada y autorizada"
+      },
+      "audit": {
+        "title": "Registro de Auditoría",
+        "description": "Registro completo de todas las acciones"
+      },
+      "rbac": {
+        "title": "Roles y Permisos",
+        "description": "Control de acceso granular con RBAC"
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": {
+      "platforms": {
+        "q": "¿Qué plataformas son compatibles?",
+        "a": "Los Agentes SlimRMM están disponibles para Windows (x64), macOS (Intel y Apple Silicon), y Linux (Debian/Ubuntu, RHEL/CentOS, Arch). El servidor funciona en cualquier sistema Linux con Docker."
+      },
+      "migration": {
+        "q": "¿Puedo cambiar desde otro RMM?",
+        "a": "Sí, SlimRMM puede funcionar junto con soluciones existentes. Nuestros agentes son ligeros y no interfieren con otro software."
+      },
+      "trial": {
+        "q": "¿Hay una prueba gratuita?",
+        "a": "Sí, puede probar SlimRMM gratis durante 30 días con hasta 10 agentes. No se requiere tarjeta de crédito."
+      },
+      "support": {
+        "q": "¿Qué soporte recibo?",
+        "a": "Todos los clientes reciben soporte por email. Los clientes de alojamiento gestionado también tienen acceso a soporte premium con tiempos de respuesta más rápidos."
+      },
+      "updates": {
+        "q": "¿Cómo se realizan las actualizaciones?",
+        "a": "Los agentes se actualizan automáticamente. Con alojamiento gestionado, las actualizaciones del servidor ocurren automáticamente. Los clientes autoalojados pueden actualizar via Docker pull."
+      },
+      "scaling": {
+        "q": "¿Cómo escala la solución?",
+        "a": "SlimRMM fue construido para rendimiento. Un solo servidor puede gestionar miles de agentes. Para despliegues más grandes, estaremos encantados de asesorarle."
+      },
+      "proxmox": {
+        "q": "¿Cómo funciona la integración con Proxmox?",
+        "a": "Los agentes en hosts Proxmox detectan automáticamente el entorno de virtualización. Puede iniciar, detener y monitorear VMs y contenedores directamente desde el dashboard."
+      }
+    }
+  },
+  "cta": {
+    "title": "¿Listo para la Gestión de TI Moderna?",
+    "subtitle": "Comience con SlimRMM hoy y experimente la diferencia",
+    "demo": "Solicitar Demo",
+    "trial": "Prueba Gratuita",
+    "contact": "Contáctenos"
+  },
+  "footer": {
+    "description": "SlimRMM es la solución moderna, segura y compatible con la privacidad para Remote Monitoring & Management.",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "links": {
+      "features": "Funciones",
+      "pricing": "Precios",
+      "integrations": "Integraciones",
+      "docs": "Documentación",
+      "api": "Referencia API",
+      "about": "Sobre Nosotros",
+      "blog": "Blog",
+      "careers": "Carreras",
+      "contact": "Contacto",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "imprint": "Aviso Legal"
+    },
+    "copyright": "Kiefer Networks. Todos los derechos reservados."
+  }
+}

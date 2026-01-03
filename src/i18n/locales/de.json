@@ -3,6 +3,7 @@
     "features": "Funktionen",
     "pricing": "Preise",
     "deployment": "Deployment",
+    "integrations": "Integrationen",
     "contact": "Kontakt",
     "demo": "Demo anfordern"
   },
@@ -29,24 +30,54 @@
         "description": "CPU, RAM, Festplatte, Netzwerk - alle Metriken in Echtzeit. Automatische Alerts bei Schwellwertüberschreitungen."
       },
       "remote": {
-        "title": "Remote-Management",
-        "description": "Sichere Fernwartung per Remote Desktop und Terminal. Führen Sie Befehle aus, ohne physisch vor Ort zu sein."
+        "title": "Remote-Zugriff",
+        "description": "Web-basiertes Terminal, Remote Desktop und Dateimanager. Verwalten Sie Systeme direkt im Browser."
       },
       "software": {
-        "title": "Software-Inventar",
-        "description": "Vollständige Übersicht aller installierten Software. Patch-Management und automatische Updates."
+        "title": "Software & Patches",
+        "description": "Vollständige Software-Inventarisierung, automatische Updates und Patch-Management für alle Plattformen."
       },
       "security": {
         "title": "Security & Compliance",
-        "description": "Schwachstellen-Scanning, Sicherheitsrichtlinien und automatisierte Compliance-Reports."
+        "description": "Schwachstellen-Scanning, Sicherheitsrichtlinien und automatisierte Compliance-Reports nach DSGVO."
       },
       "automation": {
         "title": "Automatisierung",
-        "description": "Skript-Bibliothek, geplante Aufgaben und automatisierte Workflows für wiederkehrende Prozesse."
+        "description": "PowerShell, Bash und Python Skripte. Geplante Aufgaben und automatisierte Workflows."
       },
       "reporting": {
         "title": "Reporting & Analytics",
         "description": "Detaillierte Berichte und Dashboards. Export in CSV, PDF, Excel und JSON."
+      },
+      "proxmox": {
+        "title": "Proxmox VE Integration",
+        "description": "Verwalten Sie VMs und Container direkt aus SlimRMM. Start, Stop, Neustart und Status-Überwachung."
+      },
+      "services": {
+        "title": "Service-Management",
+        "description": "Systemdienste anzeigen, starten, stoppen und neu starten. Unterstützt systemd, launchd und Windows Services."
+      }
+    }
+  },
+  "integrations": {
+    "title": "Leistungsstarke Integrationen",
+    "subtitle": "SlimRMM integriert sich nahtlos mit bewährten Open-Source-Tools",
+    "list": {
+      "osquery": {
+        "title": "osquery",
+        "description": "SQL-basierte Systemabfragen für tiefe Einblicke in Ihre Endpoints. Hardware, Software, Benutzer, Prozesse und mehr."
+      },
+      "proxmox": {
+        "title": "Proxmox VE",
+        "description": "Native Integration für Proxmox Virtualisierung. VMs und Container verwalten, Ressourcen überwachen."
+      },
+      "docker": {
+        "title": "Docker",
+        "description": "Container-Übersicht und Management. Images, Container und Volumes direkt verwalten."
+      },
+      "webrtc": {
+        "title": "WebRTC Remote Desktop",
+        "description": "Browser-basierter Remote Desktop ohne zusätzliche Software. Sichere Peer-to-Peer Verbindung."
       }
     }
   },
@@ -170,21 +201,37 @@
     },
     "hosting": {
       "title": "Managed Hosting Gebühren",
-      "description": "Zusätzlich zum Paketpreis bei Managed Hosting",
+      "description": "Zusätzlich zum Paketpreis bei Managed Hosting (Basispreis)",
       "tier1": "Bis 500 Agents",
+      "tier1Price": "250",
       "tier2": "500 - 1.000 Agents",
+      "tier2Price": "450",
       "tier3": "1.000 - 5.000 Agents",
+      "tier3Price": "650",
       "custom": "Individuell"
     },
+    "billing": {
+      "title": "Abrechnungszeitraum",
+      "monthly": "Monatlich",
+      "yearly": "Jährlich",
+      "monthlyNote": "Flexibel kündbar",
+      "yearlyNote": "7% Rabatt",
+      "yearlyBadge": "Beliebt"
+    },
+    "vatNote": "Alle Preise verstehen sich zzgl. 19% USt.",
     "calculator": {
       "title": "Preisrechner",
       "agents": "Anzahl Agents",
       "model": "Deployment-Modell",
+      "billing": "Abrechnungszeitraum",
       "selfHosted": "Self-Hosted",
       "managed": "Managed Hosting",
       "monthly": "Monatliche Kosten",
       "yearly": "Jährliche Kosten",
-      "perAgent": "Pro Agent"
+      "perAgent": "Pro Agent",
+      "savings": "Sie sparen",
+      "basePrice": "Basispreis",
+      "billingAdjustment": "Abrechnungsanpassung"
     },
     "cta": "Jetzt starten",
     "features": {
@@ -192,8 +239,12 @@
       "list": [
         "Unbegrenzte Benutzer",
         "Alle Funktionen inklusive",
+        "Terminal & Remote Desktop",
+        "Dateimanager",
+        "Proxmox Integration",
+        "osquery Integration",
+        "Service-Management",
         "E-Mail Support",
-        "Regelmäßige Updates",
         "API-Zugang",
         "Multi-Plattform Agents"
       ]
@@ -204,8 +255,8 @@
     "subtitle": "SlimRMM wurde von Grund auf mit Sicherheit im Fokus entwickelt",
     "features": {
       "mtls": {
-        "title": "mTLS Verschlüsselung",
-        "description": "Gegenseitige TLS-Authentifizierung zwischen Server und Agents"
+        "title": "TLS 1.3 & mTLS",
+        "description": "Modernste Verschlüsselung mit gegenseitiger Zertifikatsauthentifizierung"
       },
       "zeroTrust": {
         "title": "Zero Trust Architektur",
@@ -217,7 +268,7 @@
       },
       "rbac": {
         "title": "Rollen & Berechtigungen",
-        "description": "Feingranulare Zugriffskontrolle"
+        "description": "Feingranulare Zugriffskontrolle mit RBAC"
       }
     }
   },
@@ -226,7 +277,7 @@
     "questions": {
       "platforms": {
         "q": "Welche Plattformen werden unterstützt?",
-        "a": "SlimRMM Agents sind verfügbar für Windows (x64), macOS (Apple Silicon) und Linux (Debian/Ubuntu, RHEL/CentOS). Der Server läuft auf jedem Linux-System mit Docker."
+        "a": "SlimRMM Agents sind verfügbar für Windows (x64), macOS (Intel & Apple Silicon) und Linux (Debian/Ubuntu, RHEL/CentOS, Arch). Der Server läuft auf jedem Linux-System mit Docker."
       },
       "migration": {
         "q": "Kann ich von einem anderen RMM wechseln?",
@@ -242,11 +293,15 @@
       },
       "updates": {
         "q": "Wie werden Updates durchgeführt?",
-        "a": "Bei Managed Hosting erfolgen Updates automatisch. Self-Hosted Kunden erhalten Update-Benachrichtigungen und können per Docker-Pull aktualisieren."
+        "a": "Agents aktualisieren sich automatisch selbst. Bei Managed Hosting erfolgen Server-Updates automatisch. Self-Hosted Kunden können per Docker-Pull aktualisieren."
       },
       "scaling": {
         "q": "Wie skaliert die Lösung?",
         "a": "SlimRMM wurde für Performance entwickelt. Ein einzelner Server kann tausende Agents verwalten. Bei größeren Deployments beraten wir Sie gerne."
+      },
+      "proxmox": {
+        "q": "Wie funktioniert die Proxmox Integration?",
+        "a": "Agents auf Proxmox-Hosts erkennen automatisch die Virtualisierungsumgebung. Sie können VMs und Container direkt aus dem Dashboard starten, stoppen und überwachen."
       }
     }
   },
@@ -265,6 +320,7 @@
     "links": {
       "features": "Funktionen",
       "pricing": "Preise",
+      "integrations": "Integrationen",
       "docs": "Dokumentation",
       "api": "API Reference",
       "about": "Über uns",
