@@ -23,6 +23,10 @@ import {
   Box,
   Settings,
   Layers,
+  Mail,
+  Bell,
+  Webhook,
+  Send,
 } from 'lucide-vue-next'
 
 const { t, tm, locale } = useI18n()
@@ -129,6 +133,9 @@ const integrationIcons = {
   proxmox: Layers,
   docker: Box,
   webrtc: Monitor,
+  email: Mail,
+  pushover: Bell,
+  webhooks: Webhook,
 }
 
 // Security icons mapping
@@ -140,7 +147,46 @@ const securityIcons = {
 }
 
 // FAQ keys
-const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scaling', 'proxmox']
+const faqKeys = ['platforms', 'migration', 'standalone', 'support', 'updates', 'scaling', 'proxmox']
+
+// Contact form
+const contactForm = ref({
+  name: '',
+  email: '',
+  company: '',
+  message: '',
+  type: 'demo' as 'demo' | 'quote' | 'contact'
+})
+const formSubmitting = ref(false)
+const formSubmitted = ref(false)
+
+const submitContactForm = async () => {
+  formSubmitting.value = true
+  // Create mailto link with form data
+  const subject = contactForm.value.type === 'demo'
+    ? 'Demo-Anfrage SlimRMM'
+    : contactForm.value.type === 'quote'
+      ? 'Angebots-Anfrage SlimRMM'
+      : 'Kontaktanfrage SlimRMM'
+
+  const body = `Name: ${contactForm.value.name}
+Firma: ${contactForm.value.company}
+E-Mail: ${contactForm.value.email}
+
+Nachricht:
+${contactForm.value.message}`
+
+  window.location.href = `mailto:info@kiefer-networks.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+  formSubmitting.value = false
+  formSubmitted.value = true
+
+  // Reset after 3 seconds
+  setTimeout(() => {
+    formSubmitted.value = false
+    contactForm.value = { name: '', email: '', company: '', message: '', type: 'demo' }
+  }, 3000)
+}
 </script>
 
 <template>
@@ -267,11 +313,11 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
 
           <!-- CTAs -->
           <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button class="btn-primary w-full sm:w-auto">
+            <button @click="scrollTo('contact')" class="btn-primary w-full sm:w-auto">
               {{ t('hero.cta') }}
               <ArrowRight class="w-5 h-5 ml-2" />
             </button>
-            <button class="btn-outline w-full sm:w-auto">
+            <button @click="scrollTo('pricing')" class="btn-outline w-full sm:w-auto">
               {{ t('hero.ctaSecondary') }}
             </button>
           </div>
@@ -566,7 +612,7 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
           </div>
 
           <!-- Enterprise -->
-          <div class="card p-8">
+          <div class="card p-8 relative">
             <div class="absolute -top-3 right-6">
               <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">
                 {{ t('pricing.tiers.enterprise.savings') }}
@@ -829,22 +875,128 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Contact Section -->
     <section id="contact" class="py-20 sm:py-28 gradient-bg">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="section-title">{{ t('cta.title') }}</h2>
-        <p class="section-subtitle">{{ t('cta.subtitle') }}</p>
-        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button class="btn-primary w-full sm:w-auto">
-            {{ t('cta.demo') }}
-            <ArrowRight class="w-5 h-5 ml-2" />
-          </button>
-          <button class="btn-secondary w-full sm:w-auto">
-            {{ t('cta.trial') }}
-          </button>
-          <button class="btn-outline w-full sm:w-auto">
-            {{ t('cta.contact') }}
-          </button>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="section-title">{{ t('cta.title') }}</h2>
+          <p class="section-subtitle">{{ t('cta.subtitle') }}</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card p-8 max-w-2xl mx-auto">
+          <div v-if="formSubmitted" class="text-center py-8">
+            <CheckCircle class="w-16 h-16 text-green-500 mx-auto mb-4" />
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ t('contact.success') }}</h3>
+            <p class="text-gray-600">{{ t('contact.successMessage') }}</p>
+          </div>
+
+          <form v-else @submit.prevent="submitContactForm" class="space-y-6">
+            <!-- Request Type -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-3">{{ t('contact.type') }}</label>
+              <div class="grid grid-cols-3 gap-3">
+                <button
+                  type="button"
+                  @click="contactForm.type = 'demo'"
+                  :class="[
+                    'p-3 rounded-lg border-2 text-center transition-all text-sm font-medium',
+                    contactForm.type === 'demo'
+                      ? 'border-primary-500 bg-primary-50 text-primary-700'
+                      : 'border-gray-200 text-gray-600 hover:border-gray-300'
+                  ]"
+                >
+                  {{ t('contact.typeDemo') }}
+                </button>
+                <button
+                  type="button"
+                  @click="contactForm.type = 'quote'"
+                  :class="[
+                    'p-3 rounded-lg border-2 text-center transition-all text-sm font-medium',
+                    contactForm.type === 'quote'
+                      ? 'border-primary-500 bg-primary-50 text-primary-700'
+                      : 'border-gray-200 text-gray-600 hover:border-gray-300'
+                  ]"
+                >
+                  {{ t('contact.typeQuote') }}
+                </button>
+                <button
+                  type="button"
+                  @click="contactForm.type = 'contact'"
+                  :class="[
+                    'p-3 rounded-lg border-2 text-center transition-all text-sm font-medium',
+                    contactForm.type === 'contact'
+                      ? 'border-primary-500 bg-primary-50 text-primary-700'
+                      : 'border-gray-200 text-gray-600 hover:border-gray-300'
+                  ]"
+                >
+                  {{ t('contact.typeContact') }}
+                </button>
+              </div>
+            </div>
+
+            <!-- Name & Email Row -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">{{ t('contact.name') }} *</label>
+                <input
+                  id="name"
+                  v-model="contactForm.name"
+                  type="text"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">{{ t('contact.email') }} *</label>
+                <input
+                  id="email"
+                  v-model="contactForm.email"
+                  type="email"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                />
+              </div>
+            </div>
+
+            <!-- Company -->
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-700 mb-1">{{ t('contact.company') }}</label>
+              <input
+                id="company"
+                v-model="contactForm.company"
+                type="text"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">{{ t('contact.message') }} *</label>
+              <textarea
+                id="message"
+                v-model="contactForm.message"
+                rows="4"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              :disabled="formSubmitting"
+              class="btn-primary w-full"
+            >
+              <Send class="w-5 h-5 mr-2" />
+              {{ t('contact.submit') }}
+            </button>
+
+            <p class="text-xs text-gray-500 text-center">
+              {{ t('contact.privacy') }}
+              <router-link to="/datenschutz" class="text-primary-600 hover:underline">{{ t('contact.privacyLink') }}</router-link>
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -879,9 +1031,9 @@ const faqKeys = ['platforms', 'migration', 'trial', 'support', 'updates', 'scali
             <h4 class="text-white font-semibold mb-4">{{ t('footer.product') }}</h4>
             <ul class="space-y-2 text-sm">
               <li><a href="#features" class="hover:text-white transition-colors">{{ t('footer.links.features') }}</a></li>
+              <li><a href="#integrations" class="hover:text-white transition-colors">{{ t('footer.links.integrations') }}</a></li>
               <li><a href="#pricing" class="hover:text-white transition-colors">{{ t('footer.links.pricing') }}</a></li>
               <li><a href="#" class="hover:text-white transition-colors">{{ t('footer.links.docs') }}</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">{{ t('footer.links.api') }}</a></li>
             </ul>
           </div>
 

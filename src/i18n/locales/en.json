@@ -8,12 +8,12 @@
     "demo": "Request Demo"
   },
   "hero": {
-    "badge": "Open Source RMM",
+    "badge": "Enterprise RMM",
     "title": "Remote Monitoring & Management",
     "titleHighlight": "Under Your Control",
-    "subtitle": "SlimRMM is the lightweight, secure, and GDPR-compliant solution for IT departments and MSPs. Maintain full control over your data - self-hosted or managed by us.",
-    "cta": "Start Free Trial",
-    "ctaSecondary": "Live Demo",
+    "subtitle": "SlimRMM is the lightweight, secure, and GDPR-compliant solution for IT departments and MSPs. Each instance is completely standalone - your data stays with you.",
+    "cta": "Request Demo",
+    "ctaSecondary": "View Pricing",
     "trustedBy": "Trusted by IT teams in",
     "stats": {
       "agents": "Managed Endpoints",
@@ -61,7 +61,7 @@
   },
   "integrations": {
     "title": "Powerful Integrations",
-    "subtitle": "SlimRMM integrates seamlessly with proven open-source tools",
+    "subtitle": "SlimRMM integrates seamlessly with your existing tools and notification systems",
     "list": {
       "osquery": {
         "title": "osquery",
@@ -78,6 +78,18 @@
       "webrtc": {
         "title": "WebRTC Remote Desktop",
         "description": "Browser-based remote desktop without additional software. Secure peer-to-peer connection."
+      },
+      "email": {
+        "title": "Email Notifications",
+        "description": "SMTP integration for alert emails. Instant notification to your team on critical events."
+      },
+      "pushover": {
+        "title": "Pushover",
+        "description": "Push notifications on iOS, Android, and desktop. Never miss an important alert again."
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "HTTP webhooks for custom integrations. Connect SlimRMM with Slack, Teams, PagerDuty and more."
       }
     }
   },
@@ -283,9 +295,9 @@
         "q": "Can I switch from another RMM?",
         "a": "Yes, SlimRMM can run alongside existing solutions. Our agents are lightweight and don't interfere with other software."
       },
-      "trial": {
-        "q": "Is there a free trial?",
-        "a": "Yes, you can try SlimRMM free for 30 days with up to 10 agents. No credit card required."
+      "standalone": {
+        "q": "Are the RMM instances completely standalone?",
+        "a": "Yes, each SlimRMM instance is fully independent. There's no central cloud component or telemetry. Your data never leaves your infrastructure or your chosen hosting environment."
       },
       "support": {
         "q": "What support do I get?",
@@ -306,11 +318,26 @@
     }
   },
   "cta": {
-    "title": "Ready for Modern IT Management?",
-    "subtitle": "Start with SlimRMM today and experience the difference",
+    "title": "Contact Us",
+    "subtitle": "Request a demo, get a custom quote, or ask us your questions",
     "demo": "Request Demo",
-    "trial": "Start Free Trial",
+    "quote": "Request Quote",
     "contact": "Contact Us"
+  },
+  "contact": {
+    "type": "How can we help you?",
+    "typeDemo": "Request Demo",
+    "typeQuote": "Request Quote",
+    "typeContact": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company",
+    "message": "Message",
+    "submit": "Submit",
+    "success": "Thank you!",
+    "successMessage": "Your email client will open. Please send the email.",
+    "privacy": "By submitting, you agree to our",
+    "privacyLink": "Privacy Policy"
   },
   "footer": {
     "description": "SlimRMM is the modern, secure, and privacy-compliant solution for Remote Monitoring & Management.",

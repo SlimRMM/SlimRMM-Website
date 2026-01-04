@@ -8,12 +8,12 @@
     "demo": "Solicitar Demo"
   },
   "hero": {
-    "badge": "RMM Open Source",
+    "badge": "RMM Enterprise",
     "title": "Remote Monitoring & Management",
     "titleHighlight": "Bajo Su Control",
-    "subtitle": "SlimRMM es la solución ligera, segura y compatible con GDPR para departamentos de TI y MSPs. Mantenga el control total de sus datos - autoalojado o gestionado por nosotros.",
-    "cta": "Prueba Gratuita",
-    "ctaSecondary": "Demo en Vivo",
+    "subtitle": "SlimRMM es la solución ligera, segura y compatible con GDPR para departamentos de TI y MSPs. Cada instancia es completamente independiente - sus datos permanecen con usted.",
+    "cta": "Solicitar Demo",
+    "ctaSecondary": "Ver Precios",
     "trustedBy": "Confiado por equipos de TI en",
     "stats": {
       "agents": "Endpoints Gestionados",
@@ -61,7 +61,7 @@
   },
   "integrations": {
     "title": "Integraciones Potentes",
-    "subtitle": "SlimRMM se integra perfectamente con herramientas open-source probadas",
+    "subtitle": "SlimRMM se integra perfectamente con sus herramientas existentes y sistemas de notificación",
     "list": {
       "osquery": {
         "title": "osquery",
@@ -78,6 +78,18 @@
       "webrtc": {
         "title": "Escritorio Remoto WebRTC",
         "description": "Escritorio remoto basado en navegador sin software adicional. Conexión segura peer-to-peer."
+      },
+      "email": {
+        "title": "Notificaciones Email",
+        "description": "Integración SMTP para emails de alertas. Notificación instantánea a su equipo sobre eventos críticos."
+      },
+      "pushover": {
+        "title": "Pushover",
+        "description": "Notificaciones push en iOS, Android y escritorio. No se pierda nunca más una alerta importante."
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "Webhooks HTTP para integraciones personalizadas. Conecte SlimRMM con Slack, Teams, PagerDuty y más."
       }
     }
   },
@@ -283,9 +295,9 @@
         "q": "¿Puedo cambiar desde otro RMM?",
         "a": "Sí, SlimRMM puede funcionar junto con soluciones existentes. Nuestros agentes son ligeros y no interfieren con otro software."
       },
-      "trial": {
-        "q": "¿Hay una prueba gratuita?",
-        "a": "Sí, puede probar SlimRMM gratis durante 30 días con hasta 10 agentes. No se requiere tarjeta de crédito."
+      "standalone": {
+        "q": "¿Las instancias RMM son completamente independientes?",
+        "a": "Sí, cada instancia de SlimRMM es completamente autónoma. No hay componente de nube central ni telemetría. Sus datos nunca salen de su infraestructura o del entorno de alojamiento que elija."
       },
       "support": {
         "q": "¿Qué soporte recibo?",
@@ -306,11 +318,26 @@
     }
   },
   "cta": {
-    "title": "¿Listo para la Gestión de TI Moderna?",
-    "subtitle": "Comience con SlimRMM hoy y experimente la diferencia",
+    "title": "Contáctenos",
+    "subtitle": "Solicite una demo, obtenga un presupuesto personalizado o háganos sus preguntas",
     "demo": "Solicitar Demo",
-    "trial": "Prueba Gratuita",
+    "quote": "Solicitar Presupuesto",
     "contact": "Contáctenos"
+  },
+  "contact": {
+    "type": "¿Cómo podemos ayudarle?",
+    "typeDemo": "Solicitar Demo",
+    "typeQuote": "Solicitar Presupuesto",
+    "typeContact": "Contacto",
+    "name": "Nombre",
+    "email": "Email",
+    "company": "Empresa",
+    "message": "Mensaje",
+    "submit": "Enviar",
+    "success": "¡Gracias!",
+    "successMessage": "Su cliente de correo se abrirá. Por favor envíe el email.",
+    "privacy": "Al enviar, acepta nuestra",
+    "privacyLink": "Política de Privacidad"
   },
   "footer": {
     "description": "SlimRMM es la solución moderna, segura y compatible con la privacidad para Remote Monitoring & Management.",

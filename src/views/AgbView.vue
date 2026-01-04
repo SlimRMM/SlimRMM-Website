@@ -65,11 +65,18 @@ const { locale } = useI18n()
         <ul>
           <li><strong>Self-Hosted:</strong> Der Kunde erhält eine Lizenz zur Installation und zum
             Betrieb der Software auf seiner eigenen Infrastruktur.</li>
-          <li><strong>Managed Hosting:</strong> Der Anbieter stellt die Software auf seinen
+          <li><strong>Managed Hosting:</strong> Der Anbieter stellt die Software auf dedizierten
             Servern bereit und gewährleistet deren Betrieb.</li>
         </ul>
         <p>
-          (3) Der genaue Funktionsumfang ergibt sich aus der jeweiligen Leistungsbeschreibung
+          (3) Jede SlimRMM-Instanz ist vollständig eigenständig und unabhängig. Es existiert
+          keine zentrale Cloud-Komponente, kein Telemetrie-System und keine Datenübertragung
+          an den Anbieter oder Dritte. Bei der Self-Hosted-Variante verlassen die Daten
+          niemals die Infrastruktur des Kunden. Bei der Managed-Hosting-Variante verbleiben
+          die Daten auf dem dedizierten Server des Kunden.
+        </p>
+        <p>
+          (4) Der genaue Funktionsumfang ergibt sich aus der jeweiligen Leistungsbeschreibung
           auf der Website des Anbieters zum Zeitpunkt des Vertragsschlusses.
         </p>
 
@@ -292,7 +299,7 @@ const { locale } = useI18n()
           (4) Nebenabreden bedürfen der Schriftform.
         </p>
 
-        <p class="text-sm text-gray-500 mt-8">Stand: Januar 2025</p>
+        <p class="text-sm text-gray-500 mt-8">Stand: Januar 2026</p>
       </div>
     </main>
 
