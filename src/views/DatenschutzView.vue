@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { Monitor, ArrowLeft } from 'lucide-vue-next'
+import { Monitor, ArrowLeft, Shield, Server, Lock, Mail, FileText, Eye, Trash2, Edit3, AlertCircle } from 'lucide-vue-next'
 
 const { locale } = useI18n()
 </script>
 
 <template>
-  <div class="min-h-screen bg-white">
+  <div class="min-h-screen bg-gray-50">
     <!-- Header -->
-    <header class="bg-white border-b border-gray-100">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between">
           <router-link to="/" class="flex items-center space-x-2">
             <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
@@ -17,263 +17,291 @@ const { locale } = useI18n()
             </div>
             <span class="text-xl font-bold text-gray-900">SlimRMM</span>
           </router-link>
-          <router-link to="/" class="flex items-center text-gray-600 hover:text-primary-600 transition-colors">
+          <router-link to="/" class="flex items-center text-gray-600 hover:text-primary-600 transition-colors px-4 py-2 rounded-lg hover:bg-gray-100">
             <ArrowLeft class="w-4 h-4 mr-2" />
-            {{ locale === 'de' ? 'Zurück' : 'Back' }}
+            {{ locale === 'de' ? 'Zurück zur Startseite' : 'Back to Home' }}
           </router-link>
         </div>
       </div>
     </header>
 
+    <!-- Hero -->
+    <div class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+            <Shield class="w-8 h-8 text-white" />
+          </div>
+          <div>
+            <h1 class="text-3xl sm:text-4xl font-bold">Datenschutzerklärung</h1>
+            <p class="text-primary-200 mt-1">Ihre Daten in sicheren Händen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <div class="bg-white border-b border-gray-200 sticky top-[65px] z-40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex space-x-1 overflow-x-auto py-3 scrollbar-hide">
+          <a href="#ueberblick" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">Überblick</a>
+          <a href="#verantwortlicher" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">Verantwortlicher</a>
+          <a href="#rechte" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">Ihre Rechte</a>
+          <a href="#datenerfassung" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">Datenerfassung</a>
+          <a href="#slimrmm" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg whitespace-nowrap transition-colors">SlimRMM Nutzung</a>
+        </nav>
+      </div>
+    </div>
+
     <!-- Content -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 class="text-3xl font-bold text-gray-900 mb-8">Datenschutzerklärung</h1>
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Main Content -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- Überblick -->
+          <section id="ueberblick" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+              <h2 class="text-xl font-semibold text-gray-900 flex items-center">
+                <Eye class="w-5 h-5 mr-2 text-primary-600" />
+                1. Datenschutz auf einen Blick
+              </h2>
+            </div>
+            <div class="p-6 space-y-6">
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Allgemeine Hinweise</h3>
+                <p class="text-gray-600">
+                  Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen
+                  Daten passiert, wenn Sie diese Website besuchen oder unsere Dienste nutzen.
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Wie erfassen wir Ihre Daten?</h3>
+                <p class="text-gray-600">
+                  Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z.B. über das Kontaktformular).
+                  Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst (technische Daten).
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Wofür nutzen wir Ihre Daten?</h3>
+                <p class="text-gray-600">
+                  Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten.
+                  Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
+                </p>
+              </div>
+            </div>
+          </section>
 
-      <div class="prose prose-gray max-w-none">
-        <h2>1. Datenschutz auf einen Blick</h2>
+          <!-- Verantwortlicher -->
+          <section id="verantwortlicher" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+              <h2 class="text-xl font-semibold text-gray-900 flex items-center">
+                <FileText class="w-5 h-5 mr-2 text-primary-600" />
+                2. Verantwortliche Stelle
+              </h2>
+            </div>
+            <div class="p-6">
+              <div class="bg-primary-50 rounded-xl p-6 border border-primary-100">
+                <p class="font-semibold text-gray-900 mb-2">Kiefer Networks</p>
+                <p class="text-gray-600">
+                  Adalbert-Stifter-Str. 6<br />
+                  95512 Neudrossenfeld<br />
+                  Deutschland
+                </p>
+                <p class="text-gray-600 mt-4">
+                  <strong>E-Mail:</strong>{' '}
+                  <a href="mailto:info@kiefer-networks.de" class="text-primary-600 hover:text-primary-700">
+                    info@kiefer-networks.de
+                  </a>
+                </p>
+              </div>
+              <p class="text-gray-600 mt-4">
+                Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und
+                Mittel der Verarbeitung von personenbezogenen Daten.
+              </p>
+            </div>
+          </section>
 
-        <h3>Allgemeine Hinweise</h3>
-        <p>
-          Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen
-          Daten passiert, wenn Sie diese Website besuchen oder unsere Dienste nutzen. Personenbezogene Daten sind alle Daten,
-          mit denen Sie persönlich identifiziert werden können.
-        </p>
+          <!-- Ihre Rechte -->
+          <section id="rechte" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+              <h2 class="text-xl font-semibold text-gray-900 flex items-center">
+                <Shield class="w-5 h-5 mr-2 text-primary-600" />
+                3. Ihre Rechte nach DSGVO
+              </h2>
+            </div>
+            <div class="p-6">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex items-start space-x-3 p-4 bg-gray-50 rounded-xl">
+                  <Eye class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 class="font-medium text-gray-900">Auskunftsrecht</h4>
+                    <p class="text-sm text-gray-600">Erfahren Sie, welche Daten wir über Sie speichern</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3 p-4 bg-gray-50 rounded-xl">
+                  <Edit3 class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 class="font-medium text-gray-900">Berichtigungsrecht</h4>
+                    <p class="text-sm text-gray-600">Lassen Sie fehlerhafte Daten korrigieren</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3 p-4 bg-gray-50 rounded-xl">
+                  <Trash2 class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 class="font-medium text-gray-900">Löschungsrecht</h4>
+                    <p class="text-sm text-gray-600">Verlangen Sie die Löschung Ihrer Daten</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3 p-4 bg-gray-50 rounded-xl">
+                  <AlertCircle class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 class="font-medium text-gray-900">Widerspruchsrecht</h4>
+                    <p class="text-sm text-gray-600">Widersprechen Sie der Datenverarbeitung</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
+                <p class="text-sm text-yellow-800">
+                  <strong>Beschwerderecht:</strong> Sie können sich jederzeit bei der zuständigen Aufsichtsbehörde beschweren:<br />
+                  Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach
+                </p>
+              </div>
+            </div>
+          </section>
 
-        <h3>Datenerfassung auf dieser Website</h3>
-        <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
-        <p>
-          Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber:<br />
-          Kiefer Networks<br />
-          Adalbert-Stifter-Str. 6<br />
-          95512 Neudrossenfeld<br />
-          E-Mail: info@slimrmm.io
-        </p>
+          <!-- Datenerfassung -->
+          <section id="datenerfassung" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+              <h2 class="text-xl font-semibold text-gray-900 flex items-center">
+                <Server class="w-5 h-5 mr-2 text-primary-600" />
+                4. Datenerfassung auf dieser Website
+              </h2>
+            </div>
+            <div class="p-6 space-y-6">
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Hosting</h3>
+                <p class="text-gray-600">
+                  Diese Website wird bei GitHub Pages gehostet. Beim Besuch werden automatisch Informationen
+                  in Server-Log-Dateien gespeichert (Browsertyp, Betriebssystem, Referrer URL, IP-Adresse, Uhrzeit).
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Kontaktaufnahme per E-Mail</h3>
+                <p class="text-gray-600">
+                  Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben zwecks Bearbeitung der Anfrage
+                  gespeichert. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.
+                </p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Cookies</h3>
+                <p class="text-gray-600">
+                  Diese Website verwendet keine Tracking-Cookies. Es werden lediglich technisch notwendige
+                  Cookies für die Spracheinstellung verwendet.
+                </p>
+              </div>
+            </div>
+          </section>
 
-        <p><strong>Wie erfassen wir Ihre Daten?</strong></p>
-        <p>
-          Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich
-          z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
-        </p>
-        <p>
-          Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere
-          IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder
-          Uhrzeit des Seitenaufrufs).
-        </p>
+          <!-- SlimRMM Nutzung -->
+          <section id="slimrmm" class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+              <h2 class="text-xl font-semibold text-gray-900 flex items-center">
+                <Lock class="w-5 h-5 mr-2 text-primary-600" />
+                5. Datenverarbeitung bei SlimRMM
+              </h2>
+            </div>
+            <div class="p-6 space-y-6">
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div class="p-5 bg-green-50 border border-green-200 rounded-xl">
+                  <h3 class="font-semibold text-green-900 mb-2">Self-Hosted</h3>
+                  <p class="text-sm text-green-800">
+                    Alle Daten werden ausschließlich auf Ihrer eigenen Infrastruktur verarbeitet.
+                    Kiefer Networks hat <strong>keinen Zugriff</strong> auf diese Daten.
+                  </p>
+                </div>
+                <div class="p-5 bg-blue-50 border border-blue-200 rounded-xl">
+                  <h3 class="font-semibold text-blue-900 mb-2">Managed Hosting</h3>
+                  <p class="text-sm text-blue-800">
+                    Daten werden auf dedizierten Servern in EU-Rechenzentren verarbeitet.
+                    Ein AVV nach Art. 28 DSGVO wird abgeschlossen.
+                  </p>
+                </div>
+              </div>
+              <div class="p-4 bg-gray-50 border border-gray-200 rounded-xl">
+                <h4 class="font-medium text-gray-900 mb-2">Verarbeitete Daten (Managed Hosting):</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Systemdaten der verwalteten Geräte (CPU, RAM, Festplatte, Netzwerk)</li>
+                  <li>• Installierte Software</li>
+                  <li>• Benutzerkonfigurationen und Zugangsdaten (verschlüsselt)</li>
+                  <li>• Protokolldaten und Audit-Logs</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-        <p><strong>Wofür nutzen wir Ihre Daten?</strong></p>
-        <p>
-          Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten.
-          Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
-        </p>
+          <!-- SSL -->
+          <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
+              <h2 class="text-xl font-semibold text-gray-900 flex items-center">
+                <Lock class="w-5 h-5 mr-2 text-primary-600" />
+                6. SSL/TLS-Verschlüsselung
+              </h2>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-600">
+                Diese Seite nutzt aus Sicherheitsgründen eine SSL/TLS-Verschlüsselung. Eine verschlüsselte
+                Verbindung erkennen Sie am Schloss-Symbol in Ihrer Browserzeile und an „https://" in der Adresszeile.
+              </p>
+            </div>
+          </section>
+        </div>
 
-        <p><strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong></p>
-        <p>
-          Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer
-          gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung
-          oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt
-          haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das
-          Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten
-          zu verlangen.
-        </p>
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-[140px] space-y-6">
+            <!-- Contact Card -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+              <div class="flex items-center space-x-3 mb-4">
+                <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center">
+                  <Mail class="w-5 h-5 text-primary-600" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900">Fragen zum Datenschutz?</h3>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 mb-4">
+                Kontaktieren Sie uns bei Fragen zu Ihren Daten oder zur Ausübung Ihrer Rechte.
+              </p>
+              <a
+                href="mailto:info@kiefer-networks.de"
+                class="block w-full text-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                Kontakt aufnehmen
+              </a>
+            </div>
 
-        <h2>2. Hosting</h2>
-        <p>
-          Wir hosten die Inhalte unserer Website bei GitHub Pages. Anbieter ist die GitHub Inc.,
-          88 Colin P Kelly Jr St, San Francisco, CA 94107, USA.
-        </p>
-        <p>
-          Wenn Sie unsere Website besuchen, werden Ihre personenbezogenen Daten auf den Servern von GitHub
-          verarbeitet. Hierbei können auch personenbezogene Daten an den Server von GitHub in den USA
-          übermittelt werden.
-        </p>
-        <p>
-          Details entnehmen Sie der Datenschutzerklärung von GitHub:
-          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700">
-            https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
-          </a>
-        </p>
-
-        <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
-
-        <h3>Datenschutz</h3>
-        <p>
-          Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln
-          Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften
-          sowie dieser Datenschutzerklärung.
-        </p>
-
-        <h3>Hinweis zur verantwortlichen Stelle</h3>
-        <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-        <p>
-          Kiefer Networks<br />
-          Adalbert-Stifter-Str. 6<br />
-          95512 Neudrossenfeld<br />
-          E-Mail: info@slimrmm.io
-        </p>
-
-        <h3>Speicherdauer</h3>
-        <p>
-          Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde,
-          verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt.
-        </p>
-
-        <h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung</h3>
-        <p>
-          Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen
-          Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO.
-        </p>
-        <p>
-          Im Falle einer Verarbeitung zur Erfüllung eines Vertrags, dessen Vertragspartei Sie sind, verarbeiten
-          wir Ihre personenbezogenen Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO.
-        </p>
-        <p>
-          Im Falle einer Verarbeitung zur Erfüllung rechtlicher Verpflichtungen verarbeiten wir Ihre Daten
-          auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO.
-        </p>
-        <p>
-          Im Falle der Wahrung berechtigter Interessen verarbeiten wir Ihre Daten auf Grundlage von
-          Art. 6 Abs. 1 lit. f DSGVO.
-        </p>
-
-        <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
-        <p>
-          Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können
-          eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf
-          erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
-        </p>
-
-        <h3>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen (Art. 21 DSGVO)</h3>
-        <p>
-          <strong>
-            Wenn die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt,
-            haben Sie jederzeit das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben,
-            gegen die Verarbeitung Ihrer personenbezogenen Daten Widerspruch einzulegen.
-          </strong>
-        </p>
-
-        <h3>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
-        <p>
-          Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer
-          Aufsichtsbehörde zu. Die für uns zuständige Aufsichtsbehörde ist:
-        </p>
-        <p>
-          Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br />
-          Promenade 18<br />
-          91522 Ansbach<br />
-          <a href="https://www.lda.bayern.de" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700">www.lda.bayern.de</a>
-        </p>
-
-        <h3>Recht auf Datenübertragbarkeit</h3>
-        <p>
-          Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines
-          Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen,
-          maschinenlesbaren Format aushändigen zu lassen.
-        </p>
-
-        <h3>Auskunft, Löschung und Berichtigung</h3>
-        <p>
-          Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche
-          Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den
-          Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten.
-        </p>
-
-        <h3>Recht auf Einschränkung der Verarbeitung</h3>
-        <p>
-          Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen,
-          wenn die Richtigkeit der Daten bestritten wird, die Verarbeitung unrechtmäßig ist, wir die Daten
-          nicht mehr benötigen oder Sie Widerspruch eingelegt haben.
-        </p>
-
-        <h2>4. Datenerfassung auf dieser Website</h2>
-
-        <h3>Server-Log-Dateien</h3>
-        <p>
-          Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten
-          Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
-        </p>
-        <ul>
-          <li>Browsertyp und Browserversion</li>
-          <li>verwendetes Betriebssystem</li>
-          <li>Referrer URL</li>
-          <li>Hostname des zugreifenden Rechners</li>
-          <li>Uhrzeit der Serveranfrage</li>
-          <li>IP-Adresse</li>
-        </ul>
-        <p>
-          Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
-          Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
-        </p>
-
-        <h3>Kontaktaufnahme per E-Mail</h3>
-        <p>
-          Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben inklusive der von Ihnen dort
-          angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen
-          bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-        </p>
-        <p>
-          Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern
-          Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung
-          vorvertraglicher Maßnahmen erforderlich ist.
-        </p>
-
-        <h2>5. Datenverarbeitung bei Nutzung von SlimRMM</h2>
-
-        <h3>Self-Hosted Variante</h3>
-        <p>
-          Bei der Self-Hosted Variante werden alle Daten ausschließlich auf Ihrer eigenen Infrastruktur
-          verarbeitet und gespeichert. Kiefer Networks hat keinen Zugriff auf diese Daten. Sie sind
-          selbst für die Einhaltung der datenschutzrechtlichen Anforderungen verantwortlich.
-        </p>
-
-        <h3>Managed Hosting Variante</h3>
-        <p>
-          Bei der Managed Hosting Variante werden folgende Daten auf unseren Servern verarbeitet:
-        </p>
-        <ul>
-          <li>Systemdaten der verwalteten Geräte (CPU, RAM, Festplatte, Netzwerk)</li>
-          <li>Installierte Software</li>
-          <li>Benutzerkonfigurationen und Zugangsdaten (verschlüsselt)</li>
-          <li>Protokolldaten und Audit-Logs</li>
-        </ul>
-        <p>
-          Die Daten werden ausschließlich in Rechenzentren innerhalb der EU verarbeitet.
-          Die Verarbeitung erfolgt auf Grundlage des mit Ihnen geschlossenen Vertrags (Art. 6 Abs. 1 lit. b DSGVO).
-        </p>
-
-        <h3>Auftragsverarbeitung</h3>
-        <p>
-          Für die Managed Hosting Variante schließen wir mit Ihnen einen Auftragsverarbeitungsvertrag (AVV)
-          gemäß Art. 28 DSGVO ab.
-        </p>
-
-        <h2>6. SSL- bzw. TLS-Verschlüsselung</h2>
-        <p>
-          Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte
-          eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die
-          Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in
-          Ihrer Browserzeile.
-        </p>
-
-        <h2>7. Änderung dieser Datenschutzerklärung</h2>
-        <p>
-          Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen
-          rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen.
-          Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
-        </p>
-
-        <p class="text-sm text-gray-500 mt-8">Stand: Januar 2025</p>
+            <!-- Last Updated -->
+            <div class="bg-gray-100 rounded-xl p-4 text-center">
+              <p class="text-sm text-gray-500">
+                Stand: Januar 2026
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 py-8 mt-16">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-600">
-        <div class="flex justify-center space-x-6 mb-4">
-          <router-link to="/impressum" class="hover:text-primary-600">Impressum</router-link>
-          <router-link to="/datenschutz" class="hover:text-primary-600">Datenschutz</router-link>
-          <router-link to="/agb" class="hover:text-primary-600">AGB</router-link>
+    <footer class="bg-white border-t border-gray-200 py-8 mt-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+          <div class="flex items-center space-x-6 text-sm">
+            <router-link to="/impressum" class="text-gray-600 hover:text-primary-600 transition-colors">Impressum</router-link>
+            <router-link to="/datenschutz" class="text-primary-600 font-medium">Datenschutz</router-link>
+            <router-link to="/agb" class="text-gray-600 hover:text-primary-600 transition-colors">AGB</router-link>
+          </div>
+          <p class="text-sm text-gray-500">© {{ new Date().getFullYear() }} Kiefer Networks</p>
         </div>
-        <p>© {{ new Date().getFullYear() }} Kiefer Networks. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
   </div>

@@ -38,7 +38,7 @@ const { locale } = useI18n()
           <strong>Kiefer Networks</strong><br />
           Adalbert-Stifter-Str. 6<br />
           95512 Neudrossenfeld<br />
-          E-Mail: info@slimrmm.io
+          E-Mail: info@kiefer-networks.de
         </p>
         <p>
           – nachfolgend „Anbieter" genannt – und dem Kunden über die Nutzung der Software „SlimRMM"

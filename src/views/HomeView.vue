@@ -1019,8 +1019,8 @@ ${contactForm.value.message}`
               <p>Adalbert-Stifter-Str. 6</p>
               <p>95512 Neudrossenfeld</p>
               <p class="mt-2">
-                <a href="mailto:info@slimrmm.io" class="text-primary-400 hover:text-primary-300 transition-colors">
-                  info@slimrmm.io
+                <a href="mailto:info@kiefer-networks.de" class="text-primary-400 hover:text-primary-300 transition-colors">
+                  info@kiefer-networks.de
                 </a>
               </p>
             </div>
