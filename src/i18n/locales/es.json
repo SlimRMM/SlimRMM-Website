@@ -56,6 +56,14 @@
       "services": {
         "title": "Gestión de Servicios",
         "description": "Ver, iniciar, detener y reiniciar servicios del sistema. Compatible con systemd, launchd y Windows Services."
+      },
+      "compliance": {
+        "title": "Verificaciones de Cumplimiento",
+        "description": "Reglas de cumplimiento integradas y personalizadas. Verificación automatizada de línea base de seguridad en todas las plataformas."
+      },
+      "tagging": {
+        "title": "Etiquetado de Activos",
+        "description": "Organice y agrupe endpoints con etiquetas flexibles. Filtrado y búsqueda en toda su flota."
       }
     }
   },
@@ -90,6 +98,10 @@
       "webhooks": {
         "title": "Webhooks",
         "description": "Webhooks HTTP para integraciones personalizadas. Conecte SlimRMM con Slack, Teams, PagerDuty y más."
+      },
+      "syslog": {
+        "title": "Reenvío Syslog",
+        "description": "Reenvíe logs a sistemas SIEM externos via UDP o TCP. Centralice su infraestructura de logging."
       }
     }
   },
@@ -258,7 +270,10 @@
         "Gestión de Servicios",
         "Soporte por email",
         "Acceso API",
-        "Agentes multiplataforma"
+        "Agentes multiplataforma",
+        "Autenticación Multifactor",
+        "Verificaciones de Cumplimiento",
+        "Etiquetado de Activos"
       ]
     }
   },
@@ -280,7 +295,11 @@
       },
       "rbac": {
         "title": "Roles y Permisos",
-        "description": "Control de acceso granular con RBAC"
+        "description": "Control de acceso granular con más de 64 ámbitos de permisos"
+      },
+      "mfa": {
+        "title": "Autenticación Multifactor",
+        "description": "Aplicaciones autenticadoras TOTP y soporte YubiKey OTP"
       }
     }
   },

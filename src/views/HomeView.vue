@@ -27,6 +27,10 @@ import {
   Bell,
   Webhook,
   Send,
+  ClipboardCheck,
+  Tags,
+  Radio,
+  KeyRound,
 } from 'lucide-vue-next'
 
 const { t, tm, locale } = useI18n()
@@ -125,6 +129,8 @@ const featureIcons = {
   reporting: FileText,
   proxmox: Layers,
   services: Settings,
+  compliance: ClipboardCheck,
+  tagging: Tags,
 }
 
 // Integration icons mapping
@@ -136,6 +142,7 @@ const integrationIcons = {
   email: Mail,
   pushover: Bell,
   webhooks: Webhook,
+  syslog: Radio,
 }
 
 // Security icons mapping
@@ -144,6 +151,7 @@ const securityIcons = {
   zeroTrust: Shield,
   audit: FileText,
   rbac: Users,
+  mfa: KeyRound,
 }
 
 // FAQ keys

@@ -56,6 +56,14 @@
       "services": {
         "title": "Service-Management",
         "description": "Systemdienste anzeigen, starten, stoppen und neu starten. Unterstützt systemd, launchd und Windows Services."
+      },
+      "compliance": {
+        "title": "Compliance-Prüfungen",
+        "description": "Integrierte und benutzerdefinierte Compliance-Regeln. Automatisierte Sicherheitsbaseline-Überprüfung auf allen Plattformen."
+      },
+      "tagging": {
+        "title": "Asset-Tagging",
+        "description": "Endpoints flexibel mit Tags organisieren und gruppieren. Filterung und Suche über Ihre gesamte Flotte."
       }
     }
   },
@@ -90,6 +98,10 @@
       "webhooks": {
         "title": "Webhooks",
         "description": "HTTP-Webhooks für individuelle Integrationen. Verbinden Sie SlimRMM mit Slack, Teams, PagerDuty und mehr."
+      },
+      "syslog": {
+        "title": "Syslog-Weiterleitung",
+        "description": "Logs an externe SIEM-Systeme via UDP oder TCP weiterleiten. Zentralisieren Sie Ihre Log-Infrastruktur."
       }
     }
   },
@@ -258,7 +270,10 @@
         "Service-Management",
         "E-Mail Support",
         "API-Zugang",
-        "Multi-Plattform Agents"
+        "Multi-Plattform Agents",
+        "Multi-Faktor-Authentifizierung",
+        "Compliance-Prüfungen",
+        "Asset-Tagging"
       ]
     }
   },
@@ -280,7 +295,11 @@
       },
       "rbac": {
         "title": "Rollen & Berechtigungen",
-        "description": "Feingranulare Zugriffskontrolle mit RBAC"
+        "description": "Feingranulare Zugriffskontrolle mit 64+ Berechtigungsbereichen"
+      },
+      "mfa": {
+        "title": "Multi-Faktor-Authentifizierung",
+        "description": "TOTP Authenticator-Apps und YubiKey OTP Unterstützung"
       }
     }
   },
