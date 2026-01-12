@@ -2,7 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import { Monitor, ArrowLeft } from 'lucide-vue-next'
 
-const { locale } = useI18n()
+const { t } = useI18n()
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const { locale } = useI18n()
           </router-link>
           <router-link to="/" class="flex items-center text-gray-600 hover:text-primary-600 transition-colors">
             <ArrowLeft class="w-4 h-4 mr-2" />
-            {{ locale === 'de' ? 'Zurück' : 'Back' }}
+            {{ t('legal.backToHome') }}
           </router-link>
         </div>
       </div>

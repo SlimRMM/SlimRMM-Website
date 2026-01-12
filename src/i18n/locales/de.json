@@ -373,6 +373,15 @@
     "emailBodyEmail": "E-Mail",
     "emailBodyMessage": "Nachricht"
   },
+  "legal": {
+    "backToHome": "Zurück zur Startseite",
+    "imprintTitle": "Impressum",
+    "imprintSubtitle": "Angaben gemäß § 5 TMG",
+    "privacyTitle": "Datenschutz",
+    "privacySubtitle": "Datenschutzinformationen gemäß DSGVO",
+    "termsTitle": "AGB",
+    "termsSubtitle": "Allgemeine Geschäftsbedingungen"
+  },
   "footer": {
     "description": "SlimRMM ist die moderne, sichere und datenschutzkonforme Lösung für Remote Monitoring & Management.",
     "product": "Produkt",
