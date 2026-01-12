@@ -19,18 +19,19 @@ import {
   X,
   ArrowRight,
   Users,
-  Database,
   Box,
   Settings,
   Layers,
   Mail,
   Bell,
-  Webhook,
   Send,
   ClipboardCheck,
   Tags,
   Radio,
   KeyRound,
+  MessageSquare,
+  BellRing,
+  ServerCog,
 } from 'lucide-vue-next'
 
 const { t, tm, locale } = useI18n()
@@ -135,13 +136,13 @@ const featureIcons = {
 
 // Integration icons mapping
 const integrationIcons = {
-  osquery: Database,
   proxmox: Layers,
   docker: Box,
-  webrtc: Monitor,
   email: Mail,
   pushover: Bell,
-  webhooks: Webhook,
+  ntfy: BellRing,
+  gotify: ServerCog,
+  mattermost: MessageSquare,
   syslog: Radio,
 }
 

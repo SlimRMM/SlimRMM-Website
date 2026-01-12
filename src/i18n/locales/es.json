@@ -71,33 +71,33 @@
     "title": "Integraciones Potentes",
     "subtitle": "SlimRMM se integra perfectamente con sus herramientas existentes y sistemas de notificación",
     "list": {
-      "osquery": {
-        "title": "osquery",
-        "description": "Consultas de sistema basadas en SQL para obtener información detallada de sus endpoints. Hardware, software, usuarios, procesos y más."
-      },
       "proxmox": {
         "title": "Proxmox VE",
         "description": "Integración nativa para virtualización Proxmox. Gestione VMs y contenedores, monitoree recursos."
       },
       "docker": {
         "title": "Docker",
-        "description": "Vista general y gestión de contenedores. Administre imágenes, contenedores y volúmenes directamente."
-      },
-      "webrtc": {
-        "title": "Escritorio Remoto WebRTC",
-        "description": "Escritorio remoto basado en navegador sin software adicional. Conexión segura peer-to-peer."
+        "description": "Gestión completa de contenedores. Controle imágenes, contenedores, volúmenes y ejecute comandos directamente."
       },
       "email": {
-        "title": "Notificaciones Email",
-        "description": "Integración SMTP para emails de alertas. Notificación instantánea a su equipo sobre eventos críticos."
+        "title": "Email (SMTP)",
+        "description": "Integración SMTP para emails de alertas. Soporte TLS/SSL con funcionalidad de prueba."
       },
       "pushover": {
         "title": "Pushover",
-        "description": "Notificaciones push en iOS, Android y escritorio. No se pierda nunca más una alerta importante."
+        "description": "Notificaciones push en iOS, Android y escritorio. Niveles de prioridad y sonidos personalizados."
       },
-      "webhooks": {
-        "title": "Webhooks",
-        "description": "Webhooks HTTP para integraciones personalizadas. Conecte SlimRMM con Slack, Teams, PagerDuty y más."
+      "ntfy": {
+        "title": "ntfy",
+        "description": "Notificaciones push autoalojadas. Alternativa open-source con control total."
+      },
+      "gotify": {
+        "title": "Gotify",
+        "description": "Servidor de notificaciones push autoalojado. API REST simple con soporte de prioridad."
+      },
+      "mattermost": {
+        "title": "Mattermost",
+        "description": "Integración de chat de equipo via webhooks. Envíe alertas directamente a sus canales."
       },
       "syslog": {
         "title": "Reenvío Syslog",
@@ -265,15 +265,15 @@
         "Todas las funciones incluidas",
         "Terminal y Escritorio Remoto",
         "Gestor de Archivos",
+        "Integración Docker",
         "Integración Proxmox",
-        "Integración osquery",
         "Gestión de Servicios",
         "Soporte por email",
         "Acceso API",
         "Agentes multiplataforma",
         "Autenticación Multifactor",
         "Verificaciones de Cumplimiento",
-        "Etiquetado de Activos"
+        "Escaneo de Vulnerabilidades"
       ]
     }
   },

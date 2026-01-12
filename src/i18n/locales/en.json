@@ -71,33 +71,33 @@
     "title": "Powerful Integrations",
     "subtitle": "SlimRMM integrates seamlessly with your existing tools and notification systems",
     "list": {
-      "osquery": {
-        "title": "osquery",
-        "description": "SQL-based system queries for deep insights into your endpoints. Hardware, software, users, processes and more."
-      },
       "proxmox": {
         "title": "Proxmox VE",
         "description": "Native integration for Proxmox virtualization. Manage VMs and containers, monitor resources."
       },
       "docker": {
         "title": "Docker",
-        "description": "Container overview and management. Manage images, containers and volumes directly."
-      },
-      "webrtc": {
-        "title": "WebRTC Remote Desktop",
-        "description": "Browser-based remote desktop without additional software. Secure peer-to-peer connection."
+        "description": "Full container management. Control images, containers, volumes and execute commands directly."
       },
       "email": {
-        "title": "Email Notifications",
-        "description": "SMTP integration for alert emails. Instant notification to your team on critical events."
+        "title": "Email (SMTP)",
+        "description": "SMTP integration for alert emails. TLS/SSL support with test functionality."
       },
       "pushover": {
         "title": "Pushover",
-        "description": "Push notifications on iOS, Android, and desktop. Never miss an important alert again."
+        "description": "Push notifications on iOS, Android, and desktop. Priority levels and custom sounds."
       },
-      "webhooks": {
-        "title": "Webhooks",
-        "description": "HTTP webhooks for custom integrations. Connect SlimRMM with Slack, Teams, PagerDuty and more."
+      "ntfy": {
+        "title": "ntfy",
+        "description": "Self-hosted push notifications. Open-source alternative with full control over your notifications."
+      },
+      "gotify": {
+        "title": "Gotify",
+        "description": "Self-hosted push notification server. Simple REST API with priority support."
+      },
+      "mattermost": {
+        "title": "Mattermost",
+        "description": "Team chat integration via webhooks. Send alerts directly to your channels."
       },
       "syslog": {
         "title": "Syslog Forwarding",
@@ -265,15 +265,15 @@
         "All features included",
         "Terminal & Remote Desktop",
         "File Manager",
+        "Docker Integration",
         "Proxmox Integration",
-        "osquery Integration",
         "Service Management",
         "Email support",
         "API access",
         "Multi-platform agents",
         "Multi-Factor Authentication",
         "Compliance Checks",
-        "Asset Tagging"
+        "Vulnerability Scanning"
       ]
     }
   },
