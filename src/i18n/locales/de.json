@@ -39,7 +39,7 @@
       },
       "security": {
         "title": "Security & Compliance",
-        "description": "Schwachstellen-Scanning, Sicherheitsrichtlinien und automatisierte Compliance-Reports nach DSGVO."
+        "description": "Schwachstellen-Scanning, Sicherheitsrichtlinien, CIS-Benchmarks, BSI IT-Grundschutz und automatisierte DSGVO-Compliance-Reports."
       },
       "automation": {
         "title": "Automatisierung",
@@ -64,6 +64,14 @@
       "tagging": {
         "title": "Asset-Tagging",
         "description": "Endpoints flexibel mit Tags organisieren und gruppieren. Filterung und Suche über Ihre gesamte Flotte."
+      },
+      "apiKeys": {
+        "title": "API-Schlüssel & OAuth2",
+        "description": "Sicherer API-Zugriff mit OAuth2 Client Credentials. QR-Codes für einfache Integration von Drittanbieter-Apps."
+      },
+      "loginHistory": {
+        "title": "Login-Verlauf & Audit",
+        "description": "Verfolgen Sie alle Anmeldeversuche mit Geolocation, Geräteinformationen und User-Agent. Vollständiger Audit-Trail für Compliance."
       }
     }
   },

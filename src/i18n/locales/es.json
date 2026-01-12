@@ -39,7 +39,7 @@
       },
       "security": {
         "title": "Seguridad y Cumplimiento",
-        "description": "Escaneo de vulnerabilidades, políticas de seguridad e informes de cumplimiento GDPR automatizados."
+        "description": "Escaneo de vulnerabilidades, políticas de seguridad, benchmarks CIS, BSI IT-Grundschutz e informes de cumplimiento GDPR automatizados."
       },
       "automation": {
         "title": "Automatización",
@@ -64,6 +64,14 @@
       "tagging": {
         "title": "Etiquetado de Activos",
         "description": "Organice y agrupe endpoints con etiquetas flexibles. Filtrado y búsqueda en toda su flota."
+      },
+      "apiKeys": {
+        "title": "Claves API y OAuth2",
+        "description": "Acceso API seguro con credenciales de cliente OAuth2. Códigos QR para fácil integración de aplicaciones de terceros."
+      },
+      "loginHistory": {
+        "title": "Historial de Inicios de Sesión y Auditoría",
+        "description": "Rastree todos los intentos de inicio de sesión con geolocalización, información del dispositivo y user agent. Trail de auditoría completo para cumplimiento."
       }
     }
   },

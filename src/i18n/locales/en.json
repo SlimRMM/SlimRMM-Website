@@ -39,7 +39,7 @@
       },
       "security": {
         "title": "Security & Compliance",
-        "description": "Vulnerability scanning, security policies, and automated GDPR compliance reports."
+        "description": "Vulnerability scanning, security policies, CIS benchmarks, BSI IT-Grundschutz, and automated GDPR compliance reports."
       },
       "automation": {
         "title": "Automation",
@@ -64,6 +64,14 @@
       "tagging": {
         "title": "Asset Tagging",
         "description": "Organize and group endpoints with flexible tags. Filter and search across your entire fleet."
+      },
+      "apiKeys": {
+        "title": "API Keys & OAuth2",
+        "description": "Secure API access with OAuth2 client credentials. Generate QR codes for easy third-party app integration."
+      },
+      "loginHistory": {
+        "title": "Login History & Audit",
+        "description": "Track all login attempts with geolocation, device info, and user agent. Complete audit trail for compliance."
       }
     }
   },
