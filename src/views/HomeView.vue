@@ -1042,7 +1042,8 @@ ${contactForm.value.message}`
               <li><a href="#features" class="hover:text-white transition-colors">{{ t('footer.links.features') }}</a></li>
               <li><a href="#integrations" class="hover:text-white transition-colors">{{ t('footer.links.integrations') }}</a></li>
               <li><a href="#pricing" class="hover:text-white transition-colors">{{ t('footer.links.pricing') }}</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">{{ t('footer.links.docs') }}</a></li>
+              <!-- Docs link: enable when documentation is available -->
+              <!-- <li><a href="/docs" class="hover:text-white transition-colors">{{ t('footer.links.docs') }}</a></li> -->
             </ul>
           </div>
 
@@ -1050,8 +1051,9 @@ ${contactForm.value.message}`
           <div>
             <h4 class="text-white font-semibold mb-4">{{ t('footer.company') }}</h4>
             <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:text-white transition-colors">{{ t('footer.links.about') }}</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">{{ t('footer.links.blog') }}</a></li>
+              <!-- About/Blog links: enable when pages are available -->
+              <!-- <li><router-link to="/about" class="hover:text-white transition-colors">{{ t('footer.links.about') }}</router-link></li> -->
+              <!-- <li><a href="/blog" class="hover:text-white transition-colors">{{ t('footer.links.blog') }}</a></li> -->
               <li><a href="#contact" class="hover:text-white transition-colors">{{ t('footer.links.contact') }}</a></li>
             </ul>
           </div>
