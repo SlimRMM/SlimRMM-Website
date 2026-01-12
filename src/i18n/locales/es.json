@@ -356,7 +356,14 @@
     "success": "¡Gracias!",
     "successMessage": "Su cliente de correo se abrirá. Por favor envíe el email.",
     "privacy": "Al enviar, acepta nuestra",
-    "privacyLink": "Política de Privacidad"
+    "privacyLink": "Política de Privacidad",
+    "emailSubjectDemo": "Solicitud de Demo SlimRMM",
+    "emailSubjectQuote": "Solicitud de Presupuesto SlimRMM",
+    "emailSubjectContact": "Solicitud de Contacto SlimRMM",
+    "emailBodyName": "Nombre",
+    "emailBodyCompany": "Empresa",
+    "emailBodyEmail": "Email",
+    "emailBodyMessage": "Mensaje"
   },
   "footer": {
     "description": "SlimRMM es la solución moderna, segura y compatible con la privacidad para Remote Monitoring & Management.",

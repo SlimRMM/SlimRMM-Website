@@ -171,18 +171,18 @@ const formSubmitted = ref(false)
 
 const submitContactForm = async () => {
   formSubmitting.value = true
-  // Create mailto link with form data
+  // Create mailto link with form data using translated strings
   const subject = contactForm.value.type === 'demo'
-    ? 'Demo-Anfrage SlimRMM'
+    ? t('contact.emailSubjectDemo')
     : contactForm.value.type === 'quote'
-      ? 'Angebots-Anfrage SlimRMM'
-      : 'Kontaktanfrage SlimRMM'
+      ? t('contact.emailSubjectQuote')
+      : t('contact.emailSubjectContact')
 
-  const body = `Name: ${contactForm.value.name}
-Firma: ${contactForm.value.company}
-E-Mail: ${contactForm.value.email}
+  const body = `${t('contact.emailBodyName')}: ${contactForm.value.name}
+${t('contact.emailBodyCompany')}: ${contactForm.value.company}
+${t('contact.emailBodyEmail')}: ${contactForm.value.email}
 
-Nachricht:
+${t('contact.emailBodyMessage')}:
 ${contactForm.value.message}`
 
   window.location.href = `mailto:info@kiefer-networks.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
