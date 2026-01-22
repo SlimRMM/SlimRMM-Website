@@ -72,6 +72,30 @@
       "loginHistory": {
         "title": "Login History & Audit",
         "description": "Track all login attempts with geolocation, device info, and user agent. Complete audit trail for compliance."
+      },
+      "geolocation": {
+        "title": "Geolocation & World Map",
+        "description": "Visualize your entire fleet on an interactive world map. Track agent locations and filter by region or country."
+      },
+      "vulnerabilities": {
+        "title": "Vulnerability Management",
+        "description": "CVE-based vulnerability scanning with severity ratings. Track, prioritize, and remediate security issues across all endpoints."
+      },
+      "globalSearch": {
+        "title": "Global Search",
+        "description": "Powerful cross-system search. Find agents, software, users, and configurations instantly across your entire infrastructure."
+      },
+      "agentLogs": {
+        "title": "Real-Time Agent Logs",
+        "description": "Stream and search agent logs in real-time. Filter by severity, source, and time range for quick troubleshooting."
+      },
+      "enrollment": {
+        "title": "Enrollment Tokens",
+        "description": "Streamlined agent deployment with secure enrollment tokens. Automatic approval workflows and pending agent management."
+      },
+      "powerActions": {
+        "title": "Power Management",
+        "description": "Remote restart, shutdown, and Wake-on-LAN. Power up offline machines from any online agent on the network."
       }
     }
   },
@@ -281,7 +305,11 @@
         "Multi-platform agents",
         "Multi-Factor Authentication",
         "Compliance Checks",
-        "Vulnerability Scanning"
+        "Vulnerability Scanning",
+        "Wake-on-LAN",
+        "Geolocation Map",
+        "Global Search",
+        "Real-Time Logs"
       ]
     }
   },

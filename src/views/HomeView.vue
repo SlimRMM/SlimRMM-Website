@@ -32,6 +32,12 @@ import {
   MessageSquare,
   BellRing,
   ServerCog,
+  MapPin,
+  ShieldAlert,
+  Search,
+  ScrollText,
+  Ticket,
+  Power,
 } from 'lucide-vue-next'
 
 const { t, tm, locale } = useI18n()
@@ -132,6 +138,12 @@ const featureIcons = {
   services: Settings,
   compliance: ClipboardCheck,
   tagging: Tags,
+  geolocation: MapPin,
+  vulnerabilities: ShieldAlert,
+  globalSearch: Search,
+  agentLogs: ScrollText,
+  enrollment: Ticket,
+  powerActions: Power,
 }
 
 // Integration icons mapping

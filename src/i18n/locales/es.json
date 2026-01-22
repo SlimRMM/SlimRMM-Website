@@ -72,6 +72,30 @@
       "loginHistory": {
         "title": "Historial de Inicios de Sesión y Auditoría",
         "description": "Rastree todos los intentos de inicio de sesión con geolocalización, información del dispositivo y user agent. Trail de auditoría completo para cumplimiento."
+      },
+      "geolocation": {
+        "title": "Geolocalización y Mapa Mundial",
+        "description": "Visualice toda su flota en un mapa mundial interactivo. Rastree ubicaciones de agentes y filtre por región o país."
+      },
+      "vulnerabilities": {
+        "title": "Gestión de Vulnerabilidades",
+        "description": "Escaneo de vulnerabilidades basado en CVE con clasificaciones de severidad. Rastree, priorice y remedie problemas de seguridad en todos los endpoints."
+      },
+      "globalSearch": {
+        "title": "Búsqueda Global",
+        "description": "Potente búsqueda entre sistemas. Encuentre agentes, software, usuarios y configuraciones instantáneamente en toda su infraestructura."
+      },
+      "agentLogs": {
+        "title": "Logs de Agentes en Tiempo Real",
+        "description": "Transmita y busque logs de agentes en tiempo real. Filtre por severidad, fuente y rango de tiempo para una rápida resolución de problemas."
+      },
+      "enrollment": {
+        "title": "Tokens de Inscripción",
+        "description": "Despliegue de agentes optimizado con tokens de inscripción seguros. Flujos de trabajo de aprobación automática y gestión de agentes pendientes."
+      },
+      "powerActions": {
+        "title": "Gestión de Energía",
+        "description": "Reinicio remoto, apagado y Wake-on-LAN. Encienda máquinas sin conexión desde cualquier agente en línea en la red."
       }
     }
   },
@@ -281,7 +305,11 @@
         "Agentes multiplataforma",
         "Autenticación Multifactor",
         "Verificaciones de Cumplimiento",
-        "Escaneo de Vulnerabilidades"
+        "Escaneo de Vulnerabilidades",
+        "Wake-on-LAN",
+        "Mapa de Geolocalización",
+        "Búsqueda Global",
+        "Logs en Tiempo Real"
       ]
     }
   },

@@ -72,6 +72,30 @@
       "loginHistory": {
         "title": "Login-Verlauf & Audit",
         "description": "Verfolgen Sie alle Anmeldeversuche mit Geolocation, Geräteinformationen und User-Agent. Vollständiger Audit-Trail für Compliance."
+      },
+      "geolocation": {
+        "title": "Geolokalisierung & Weltkarte",
+        "description": "Visualisieren Sie Ihre gesamte Flotte auf einer interaktiven Weltkarte. Verfolgen Sie Agent-Standorte und filtern Sie nach Region oder Land."
+      },
+      "vulnerabilities": {
+        "title": "Schwachstellen-Management",
+        "description": "CVE-basiertes Schwachstellen-Scanning mit Schweregrad-Bewertungen. Verfolgen, priorisieren und beheben Sie Sicherheitsprobleme auf allen Endpoints."
+      },
+      "globalSearch": {
+        "title": "Globale Suche",
+        "description": "Leistungsstarke systemübergreifende Suche. Finden Sie Agents, Software, Benutzer und Konfigurationen sofort in Ihrer gesamten Infrastruktur."
+      },
+      "agentLogs": {
+        "title": "Echtzeit-Agent-Logs",
+        "description": "Streamen und durchsuchen Sie Agent-Logs in Echtzeit. Filtern Sie nach Schweregrad, Quelle und Zeitraum für schnelle Fehlerbehebung."
+      },
+      "enrollment": {
+        "title": "Enrollment-Tokens",
+        "description": "Optimierte Agent-Bereitstellung mit sicheren Enrollment-Tokens. Automatische Genehmigungsworkflows und Verwaltung ausstehender Agents."
+      },
+      "powerActions": {
+        "title": "Power-Management",
+        "description": "Remote-Neustart, Herunterfahren und Wake-on-LAN. Wecken Sie Offline-Rechner von jedem Online-Agent im Netzwerk auf."
       }
     }
   },
@@ -281,7 +305,11 @@
         "Multi-Plattform Agents",
         "Multi-Faktor-Authentifizierung",
         "Compliance-Prüfungen",
-        "Schwachstellen-Scanning"
+        "Schwachstellen-Scanning",
+        "Wake-on-LAN",
+        "Geolokalisierungs-Karte",
+        "Globale Suche",
+        "Echtzeit-Logs"
       ]
     }
   },
